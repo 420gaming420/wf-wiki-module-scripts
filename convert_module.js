@@ -305,7 +305,7 @@ async function convertModuleToJson(moduleName, options = {}, batchPage = null) {
     });
     page = await browser.newPage();
     await page.setUserAgent(
-      'puppeteer_wf-wiki-module-mirror (https://github.com/420gaming420/wf-wiki-module-scripts)''
+      'puppeteer_wf-wiki-module-mirror (https://github.com/420gaming420/wf-wiki-module-scripts)'
     );
     const editUrl = `${config.wikiBaseUrl}/w/Module:Sandbox/ScribuntoDebugConsole?action=edit`;
     console.log(`  Navigating to: ${editUrl}`);
@@ -471,9 +471,11 @@ async function main() {
         const jsonString = JSON.stringify(jsonData, null, 2);
         fs.writeFileSync(outputPath, jsonString, 'utf8');
 
-        // Save metadata
+        // Save metadata (include wiki_timestamp from stale_modules.json)
+        const staleInfo = moduleList.find(m => m.page === moduleName);
         const meta = {
           page: moduleName,
+          wiki_timestamp: staleInfo?.wiki_timestamp || null,
           converted_at: new Date().toISOString(),
           output_file: `${safeName}.json`,
           file_size: jsonString.length,
