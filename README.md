@@ -33,7 +33,7 @@ python3 request.py [--config config.ini]
 | Flag | Description |
 |---|---|
 | `--config CONFIG` | Path to config.ini (default: `config.ini`) |
-| `--force-collect` | Re-collect all modules regardless of staleness |
+| `--force-collect` | Force re-fetch the full module catalog from the wiki API (overwrites any cached `all_wfwiki_modules_merged.json`) |
 
 ---
 
@@ -54,10 +54,10 @@ node convert_module.js --config config.ini --batch --pages stale_modules.json
 
 **How it works:**
 1. Launches a single headless Chromium browser
-2. Navigates to `https://wiki.warframe.com:/w/Module:Sandbox/ScribuntoDebugConsole?action=edit`
-3. Injects `luaexec(json.encode(scribunto.evaluate(...)))` into the debug console
-4. Extracts the JSON output from the console response
-5. Writes to `data/json/Module-X.json`
+2. Navigates to `https://wiki.warframe.com/w/Module:Sandbox/ScribuntoDebugConsole?action=edit`
+3. Executes Lua code that requires the module, stringifies it with `Module:JSON`, and logs the result via `mw.log()`
+4. Extracts the JSON output from the `.mw-scribunto-print` div
+5. Writes to `data/json/<ModuleName>.json` (colons and slashes in the module name are replaced with hyphens)
 
 **Rate limiting:** 1 request per second (configurable via `config.ini`)
 
@@ -75,14 +75,14 @@ python3 attribution.py [--config config.ini] [--force] [--dry-run] [--verbose]
 
 ```json
 {
-  "__attribution": {
+  "_attribution": {
     "source_url": "https://wiki.warframe.com/w/Module:Ability/data",
     "license": "CC BY-NC-SA 3.0",
     "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
     "converter_repo": "https://github.com/420gaming420/wf-wiki-module-scripts",
     "converted_at": "2026-08-29T15:12:00.785Z"
   },
-  "__comments": "-- Database for Module:Ability\n-- Note that [\"Warframe\"] subtable indexes...",
+  "_comments": "-- Database for Module:Ability\n-- Note that [\"Warframe\"] subtable indexes...",
   ...existing data...
 }
 ```
@@ -90,7 +90,7 @@ python3 attribution.py [--config config.ini] [--force] [--dry-run] [--verbose]
 **Options:**
 | Flag | Description |
 |---|---|
-| `--force` | Process ALL files regardless of staleness (fetches HTML for all 177 modules) |
+| `--force` | Process ALL JSON files in the output directory regardless of staleness (rewrites `_attribution` and re-fetches `_comments` for every file) |
 | `--dry-run` | Show what would change without writing anything |
 | `--verbose` | Print detailed per-file information |
 
@@ -117,6 +117,8 @@ bash workflow.sh [--dry-run]
 2. Run `convert_module.js --batch` to convert each stale module
 3. Run `attribution.py --force` to add attribution and comments
 4. Print summary with timing and counts
+
+> **Note on `--dry-run`:** This flag only checks whether `stale_modules.json` exists and prints how many modules would be converted. It does not execute any of the pipeline steps.
 
 **Output format:**
 ```
@@ -176,7 +178,7 @@ This is a **read-only mirror** — to modify data, edit the source on the [WARFR
 
 ## Requirements
 
-- **Node.js** 18+ (for `convert_module.js`)
+- **Node.js** 22+ (for `convert_module.js`)
 - **Python** 3.10+ (for `request.py`, `attribution.py`)
 - **puppeteer** npm package
 - **bash** (for `workflow.sh`)
