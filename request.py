@@ -416,6 +416,7 @@ def main():
     parser = argparse.ArgumentParser(description='Query WARFRAME Wiki API for stale modules')
     parser.add_argument('--config', type=Path, default=Path('config.ini'), help='Path to config file')
     parser.add_argument('--force-collect', action='store_true', help='Force re-collection of module catalog')
+    parser.add_argument('--check-metafiles', action='store_true', help='Check metadata files without API calls (dry run)')
     args = parser.parse_args()
     
     start_time = time.time()
@@ -427,6 +428,10 @@ def main():
     
     config = load_config(args.config)
     
+    # Debug: Show working directory and path info
+    print(f"\n[CWD] Current working directory: {Path.cwd()}")
+    print(f"[CWD] CWD absolute: {Path.cwd().resolve()}")
+    
     api_url = get_config_value(config, 'wiki', 'api_url', 'https://wiki.warframe.com/api.php')
     user_agent = get_config_value(config, 'wiki', 'user_agent', 'WFModuleMirror/1.0')
     rate_limit_str = get_config_value(config, 'wiki', 'rate_limit', '1.0')
@@ -437,7 +442,90 @@ def main():
     ignore_modules_path = Path(get_config_value(config, 'paths', 'ignore_modules', 'ignore_modules.json'))
     metadata_dir = Path(get_config_value(config, 'paths', 'metadata_dir', 'data/json'))
     
+    # Debug: Show metadata path info
+    print(f"\n[METADATA_PATH] Config value: data/json")
+    print(f"[METADATA_PATH] Resolved: {metadata_dir.resolve()}")
+    print(f"[METADATA_PATH] Exists: {metadata_dir.exists()}")
+    print(f"[METADATA_PATH] Is absolute: {metadata_dir.is_absolute()}")
+    
+    # Debug: Show directory contents
+    print(f"\n[DEBUG] /tmp/scripts/ contents:")
+    try:
+        for f in Path('/tmp/scripts/').iterdir():
+            print(f"  {f.name} ({'dir' if f.is_dir() else 'file'})")
+    except Exception as e:
+        print(f"  Error: {e}")
+    
+    print(f"\n[DEBUG] /tmp/scripts/data/ contents:")
+    try:
+        data_dir = Path('/tmp/scripts/data')
+        if data_dir.exists():
+            for f in data_dir.iterdir():
+                print(f"  {f.name} -> {f.resolve() if f.is_symlink() else 'file'}")
+        else:
+            print("  Directory does not exist")
+    except Exception as e:
+        print(f"  Error: {e}")
+    
+    print(f"\n[DEBUG] /tmp/scripts/data/json/ contents:")
+    try:
+        json_dir = Path('/tmp/scripts/data/json')
+        if json_dir.exists():
+            meta_files = list(json_dir.glob('*.meta.json'))
+            print(f"  Found {len(meta_files)} .meta.json files")
+            if meta_files:
+                print(f"  First 3 files:")
+                for f in meta_files[:3]:
+                    print(f"    {f.name}")
+        else:
+            print("  Directory does not exist")
+    except Exception as e:
+        print(f"  Error: {e}")
+    
     rate_limiter = RateLimiter(min_interval=rate_limit)
+    
+    # --check-metafiles mode: skip all API calls, only check metadata files
+    if args.check_metafiles:
+        print(f"\n{'=' * 60}")
+        print("CHECK-METAFILES MODE (dry run - no API calls)")
+        print(f"{'=' * 60}")
+        
+        # Load ignore list (no API call)
+        ignore_list = load_ignore_list(ignore_modules_path)
+        if ignore_list:
+            print(f"\nLoaded {len(ignore_list)} ignored modules")
+        
+        # Load metadata (no API call)
+        print(f"\nLoading existing metadata from {metadata_dir}...")
+        metadata = load_metadata(metadata_dir)
+        print(f"  Found {len(metadata)} metadata files")
+        
+        print(f"\nConfig values:")
+        print(f"  metadata_dir: {metadata_dir}")
+        print(f"  resolved: {metadata_dir.resolve()}")
+        print(f"  exists: {metadata_dir.exists()}")
+        print(f"\nMetadata files found: {len(metadata)}")
+        
+        if metadata:
+            print(f"\nFirst 3 metadata file contents:")
+            for i, (page, data) in enumerate(list(metadata.items())[:3], 1):
+                print(f"\n  {i}. {page}")
+                print(f"     {json.dumps(data, indent=2)}")
+        else:
+            print("\n  No metadata files found!")
+            print(f"\n  Trying alternative paths:")
+            alt_paths = [
+                Path('/tmp/scripts/data/json'),
+                Path('/home/runner/work/wf-wiki-module-data/wf-wiki-module-data/json'),
+                Path('json'),
+            ]
+            for alt in alt_paths:
+                print(f"    {alt} -> exists: {alt.exists()}, files: {len(list(alt.glob('*.meta.json')) if alt.exists() else 0)}")
+        
+        print(f"\n{'=' * 60}")
+        print("CHECK-METAFILES COMPLETE")
+        print(f"{'=' * 60}")
+        return 0
     
     # Phase 1: Collect module catalog
     catalog_path = Path('all_wfwiki_modules_merged.json')
