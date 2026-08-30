@@ -16,12 +16,13 @@ Usage:
 import argparse
 import configparser
 import json
-import re
 import sys
 import time
 import urllib.parse
 from datetime import datetime, timezone
 from pathlib import Path
+
+from utils import lua_extractor
 
 
 # License constants (hardcoded, not configurable)
@@ -73,62 +74,9 @@ def get_converter_repo(config: configparser.ConfigParser) -> str:
     return config.get("github", "url").strip()
 
 
-def get_rate_limit(config: configparser.ConfigParser) -> float:
-    """Extract the rate limit in seconds from config."""
-    if config.has_section("wiki") and config.has_option("wiki", "rate_limit"):
-        try:
-            return float(config.get("wiki", "rate_limit"))
-        except ValueError:
-            pass
-    return 1.0
-
-
-# Tracks time of last fetch to enforce rate limiting
-_last_fetch_time: float = 0.0
-
-
-def rate_limited_fetch(url: str, rate_limit: float) -> str | None:
-    """
-    Fetch an HTML page with rate limiting to avoid IP bans.
-
-    Args:
-        url: Full URL to the wiki page
-        rate_limit: Minimum seconds between requests
-
-    Returns:
-        HTML content string, or None if fetch failed
-    """
-    global _last_fetch_time
-    elapsed = time.time() - _last_fetch_time
-    if elapsed < rate_limit:
-        time.sleep(rate_limit - elapsed)
-    _last_fetch_time = time.time()
-    return fetch_html(url)
-
-
-def fetch_html(url: str) -> str | None:
-    """
-    Fetch an HTML page from the wiki and return its content.
-
-    Args:
-        url: Full URL to the wiki page
-
-    Returns:
-        HTML content string, or None if fetch failed
-    """
-    try:
-        import urllib.request
-        req = urllib.request.Request(
-            url,
-            headers={
-                "User-Agent": "clientname/version (contact information e.g. username, email) framework/version..."
-            }
-        )
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return resp.read().decode("utf-8")
-    except (OSError, ValueError) as e:
-        print(f"  Warning: Failed to fetch {url}: {e}", file=sys.stderr)
-        return None
+def get_lua_dir(config: configparser.ConfigParser) -> Path:
+    """Extract the Lua directory path from config."""
+    return Path(config.get("paths", "lua_dir", fallback="data/lua"))
 
 
 def load_meta_for_file(json_path: Path) -> tuple[dict | None, str]:
@@ -183,95 +131,7 @@ def build_attribution(
     }
 
 
-# ---------------------------------------------------------------------------
-# Lua comment extraction (from offline HTML cache)
-# ---------------------------------------------------------------------------
 
-def extract_lua_from_html(html: str) -> str | None:
-    """
-    Extract the main Lua code block from a wiki HTML page.
-
-    Picks the largest <pre> block that contains 'local ' or 'return '.
-
-    Args:
-        html: Raw HTML string
-
-    Returns:
-        Cleaned Lua source code, or None if no code found
-    """
-    pre_blocks = re.findall(r"<pre[^>]*>(.*?)</pre>", html, re.DOTALL)
-    best = None
-    for block in pre_blocks:
-        clean = re.sub(r"<[^>]+>", "", block)
-        clean = clean.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
-        clean = clean.replace("&quot;", '"').replace("&#39;", "'")
-        if "local " in clean or "return " in clean:
-            if best is None or len(clean) > len(best):
-                best = clean
-    return best
-
-
-def extract_comments(lua_code: str) -> str:
-    """
-    Extract all comment lines from Lua source code.
-
-    Handles:
-    - Single-line comments: -- text
-    - Multi-line comments: --[=[ ... ]=] and --[[ ... ]]
-    - Comment lines embedded anywhere in the code (not just leading block)
-
-    Args:
-        lua_code: Cleaned Lua source string
-
-    Returns:
-        Formatted comment string, or empty string if no comments found
-    """
-    if not lua_code:
-        return ""
-
-    lines = lua_code.split("\n")
-    comment_lines: list[str] = []
-    in_multiline = False
-    multiline_buffer: list[str] = []
-
-    for line in lines:
-        stripped = line.lstrip()
-
-        if in_multiline:
-            multiline_buffer.append(line)
-            # Check for multi-line comment end: ]=] or ]]
-            if re.search(r"\]=\]\s*$", stripped) or re.search(r"\]\]\s*$", stripped):
-                in_multiline = False
-                comment_lines.extend(multiline_buffer)
-                multiline_buffer = []
-            continue
-
-        if stripped.startswith("--"):
-            # Check for multi-line comment start: --[=[ or --[[
-            if re.search(r"--\[[=]*\s*$", stripped) or re.search(r"--\[\[", stripped):
-                in_multiline = True
-                multiline_buffer = [line]
-                # Check if it ends on the same line
-                if re.search(r"\]=\]\s*$", stripped) or re.search(r"\]\]\s*$", stripped):
-                    comment_lines.extend(multiline_buffer)
-                    multiline_buffer = []
-                    in_multiline = False
-            else:
-                comment_lines.append(line)
-
-    if not comment_lines:
-        return ""
-
-    # Deduplicate while preserving order
-    seen: set[str] = set()
-    unique: list[str] = []
-    for line in comment_lines:
-        key = line.strip()
-        if key and key not in seen:
-            seen.add(key)
-            unique.append(line)
-
-    return "\n".join(unique)
 
 
 
@@ -318,7 +178,7 @@ def process_file(
     base_url: str,
     converter_repo: str,
     stale_modules: set[str] | None,
-    rate_limit: float,
+    config,
     force: bool = False,
     dry_run: bool = False,
     verbose: bool = False,
@@ -331,7 +191,7 @@ def process_file(
         base_url: Wiki base URL
         converter_repo: GitHub repo URL
         stale_modules: Set of stale module names, or None (skip staleness check)
-        rate_limit: Minimum seconds between HTTP requests
+        config: ConfigParser instance
         force: If True, skip staleness check
         dry_run: If True, only show what would change
         verbose: If True, print detailed info
@@ -373,17 +233,23 @@ def process_file(
     # Build new attribution
     new_attribution = build_attribution(module_name, base_url, converter_repo, converted_at)
 
-    # Fetch HTML and extract comments (skip fetch in dry-run mode)
+    # Extract comments from local Lua file (skip in dry-run mode)
     source_url = new_attribution["source_url"]
     comment_text = ""
     if not dry_run:
-        html_content = rate_limited_fetch(source_url, rate_limit)
-        if html_content:
-            lua_code = extract_lua_from_html(html_content)
-            if lua_code:
-                comment_text = extract_comments(lua_code)
+        lua_dir = get_lua_dir(config)
+        safe_name = module_name.replace(":", "-").replace("/", "-")
+        lua_path = lua_dir / f"{safe_name}.lua"
+        if lua_path.exists():
+            try:
+                with open(lua_path, "r", encoding="utf-8") as f:
+                    lua_code = f.read()
+                comment_text = lua_extractor.extract_comments(lua_code)
+            except OSError as e:
+                if verbose:
+                    print(f"  Warning: Failed to read {lua_path}: {e}", file=sys.stderr)
         elif verbose:
-            print(f"  Warning: Could not fetch {source_url}", file=sys.stderr)
+            print(f"  Warning: Lua file not found: {lua_path}", file=sys.stderr)
 
     # Always update _attribution and _comments — never skip
     if "_attribution" in data:
@@ -478,7 +344,6 @@ def main() -> int:
     config = load_config(args.config)
     base_url = get_base_url(config)
     converter_repo = get_converter_repo(config)
-    rate_limit = get_rate_limit(config)
     output_dir = Path(config.get("paths", "output_dir"))
 
     if not output_dir.exists():
@@ -502,7 +367,6 @@ def main() -> int:
         return 0
 
     print(f"Found {len(json_files)} JSON file(s) in {output_dir}")
-    print(f"Rate limit: {rate_limit}s between requests")
     if args.dry_run:
         print("(dry run mode — no changes will be written)\n")
     print()
@@ -518,7 +382,7 @@ def main() -> int:
             base_url,
             converter_repo,
             stale_modules,
-            rate_limit,
+            config,
             args.force,
             args.dry_run,
             args.verbose,

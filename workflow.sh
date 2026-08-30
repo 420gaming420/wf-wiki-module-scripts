@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # WARFRAME Wiki Module Sync Workflow
-# Orchestrates request.py, convert_module.js, and attribution.py
+# Orchestrates request.py, download.py, extract_lua.py, convert_module.js, and attribution.py
 #
 # Usage:
 #   bash workflow.sh
@@ -26,6 +26,10 @@ DISABLE_FILE=".github/disable-action.md"
 # Counters
 REQUEST_START_TIME=0
 REQUEST_END_TIME=0
+DOWNLOAD_START_TIME=0
+DOWNLOAD_END_TIME=0
+EXTRACT_START_TIME=0
+EXTRACT_END_TIME=0
 CONVERT_START_TIME=0
 CONVERT_END_TIME=0
 WORKFLOW_START_TIME=0
@@ -103,29 +107,39 @@ generate_config() {
 # WARFRAME Wiki API settings
 base_url = https://wiki.warframe.com
 api_url = https://wiki.warframe.com/api.php
-user_agent = WFModuleMirror/1.0 (your-contact@example.com)
-rate_limit = 1.0  # seconds between API requests
-staleness_hours = 24  # skip modules converted within this window
+rate_limit = 1.0
+staleness_hours = 24
+
+[user_agents]
+# User-Agent headers for different tools (helps with debugging/tracking)
+# Replace with your own contact information
+wiki_client = WFModuleMirror/1.0 (your-contact@example.com)
+download = WFModuleDownload/1.0 (your-contact@example.com)
+attribution = WFModuleAttribution/1.0 (your-contact@example.com)
 
 [conversion]
 # Puppeteer conversion settings
-timeout_ms = 60000  # per module conversion timeout
-retry_delay_ms = 2000  # between retries
+timeout_ms = 60000
+retry_delay_ms = 2000
 max_retries = 3
-browser_timeout = 30000  # browser launch timeout
+browser_timeout = 30000
 
 [paths]
 # Directory paths
 stale_modules = stale_modules.json
 ignore_modules = ignore_modules.json
+catalog_file = all_wfwiki_modules_merged.json
 output_dir = data/json
 metadata_dir = data/json
 log_dir = data/logs
+html_dir = data/html
+lua_dir = data/lua
 
 [github]
 # GitHub Actions settings
-max_consecutive_errors = 3  # disable action after this many crashes
+max_consecutive_errors = 3
 notify_on_failure = true
+url = https://github.com/your-username/your-repo
 EOF
         log_info "Configuration file created. Edit $CONFIG_FILE as needed."
     fi
@@ -167,6 +181,62 @@ run_request_py() {
     # Reset consecutive errors on success
     echo "0" > "$CONSECUTIVE_ERRORS_FILE"
     
+    return 0
+}
+
+run_download_py() {
+    log_info "Starting download.py..."
+    DOWNLOAD_START_TIME=$(date +%s)
+
+    # Run download.py and capture output
+    local output
+    if [ -t 1 ]; then
+        output=$(python3 download.py 2>&1 | tee /dev/tty)
+    else
+        output=$(python3 download.py 2>&1)
+    fi || {
+        local exit_code=$?
+        log_warn "download.py failed with exit code $exit_code (continuing)"
+        log_warn "Output:"
+        echo "$output" | sed 's/^/  /'
+        DOWNLOAD_END_TIME=$(date +%s)
+        return $exit_code
+    }
+
+    DOWNLOAD_END_TIME=$(date +%s)
+    local download_duration=$((DOWNLOAD_END_TIME - DOWNLOAD_START_TIME))
+
+    log_info "download.py completed successfully"
+    log_info "Duration: ${download_duration}s"
+
+    return 0
+}
+
+run_extract_lua_py() {
+    log_info "Starting extract_lua.py..."
+    EXTRACT_START_TIME=$(date +%s)
+
+    # Run extract_lua.py and capture output
+    local output
+    if [ -t 1 ]; then
+        output=$(python3 extract_lua.py 2>&1 | tee /dev/tty)
+    else
+        output=$(python3 extract_lua.py 2>&1)
+    fi || {
+        local exit_code=$?
+        log_warn "extract_lua.py failed with exit code $exit_code (continuing)"
+        log_warn "Output:"
+        echo "$output" | sed 's/^/  /'
+        EXTRACT_END_TIME=$(date +%s)
+        return $exit_code
+    }
+
+    EXTRACT_END_TIME=$(date +%s)
+    local extract_duration=$((EXTRACT_END_TIME - EXTRACT_START_TIME))
+
+    log_info "extract_lua.py completed successfully"
+    log_info "Duration: ${extract_duration}s"
+
     return 0
 }
 
@@ -244,16 +314,20 @@ EOF
 
 generate_summary() {
     local request_duration=$1
-    local convert_duration=$2
-    local total_duration=$3
+    local download_duration=$2
+    local extract_duration=$3
+    local convert_duration=$4
+    local total_duration=$5
     
     log_info ""
     log_info "=================================="
     log_info "WORKFLOW SUMMARY"
     log_info "=================================="
-    log_info "Request.py duration: $(format_duration $1)"
-    log_info "Convert_module.js duration: $(format_duration $2)"
-    log_info "Total workflow duration: $(format_duration $3)"
+    log_info "request.py duration: $(format_duration $1)"
+    log_info "download.py duration: $(format_duration $2)"
+    log_info "extract_lua.py duration: $(format_duration $3)"
+    log_info "convert_module.js duration: $(format_duration $4)"
+    log_info "Total workflow duration: $(format_duration $5)"
     log_info "=================================="
 }
 
@@ -321,31 +395,47 @@ main() {
         
         WORKFLOW_END_TIME=$(date +%s)
         local total_duration=$((WORKFLOW_END_TIME - WORKFLOW_START_TIME))
-        generate_summary 0 0 $total_duration
+        generate_summary 0 0 0 0 $total_duration
         return 0
     fi
     
-    # Run request.py
+    # Run request.py (abort on failure)
     local request_exit_code=0
     run_request_py || request_exit_code=$?
-    
+
     if [ $request_exit_code -ne 0 ]; then
         log_error "Aborting workflow due to request.py failure"
         return $request_exit_code
     fi
-    
-    # Run convert_module.js
+
+    # Run download.py (continue on failure)
+    run_download_py || true
+
+    # Run extract_lua.py (continue on failure)
+    run_extract_lua_py || true
+
+    # Run convert_module.js (abort on failure)
     local convert_exit_code=0
     run_convert_module_js || convert_exit_code=$?
-    
+
+    # Run attribution.py (continue on failure)
+    local attribution_output
+    if [ -t 1 ]; then
+        attribution_output=$(python3 attribution.py 2>&1 | tee /dev/tty) || true
+    else
+        attribution_output=$(python3 attribution.py 2>&1) || true
+    fi
+
     WORKFLOW_END_TIME=$(date +%s)
     local total_duration=$((WORKFLOW_END_TIME - WORKFLOW_START_TIME))
-    
+
     # Generate summary
     local request_duration=$((REQUEST_END_TIME - REQUEST_START_TIME))
+    local download_duration=$((DOWNLOAD_END_TIME - DOWNLOAD_START_TIME))
+    local extract_duration=$((EXTRACT_END_TIME - EXTRACT_START_TIME))
     local convert_duration=$((CONVERT_END_TIME - CONVERT_START_TIME))
-    generate_summary $request_duration $convert_duration $total_duration
-    
+    generate_summary $request_duration $download_duration $extract_duration $convert_duration $total_duration
+
     # Return appropriate exit code
     if [ $convert_exit_code -eq 2 ]; then
         # No stale modules - not an error
@@ -356,7 +446,7 @@ main() {
     elif [ $convert_exit_code -ne 0 ]; then
         return $convert_exit_code
     fi
-    
+
     return 0
 }
 

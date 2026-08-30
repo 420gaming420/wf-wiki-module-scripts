@@ -10,8 +10,9 @@
 This repository contains the automated pipeline that:
 
 1. **Detects** which WARFRAME Wiki module pages have changed since the last sync
-2. **Converts** stale modules from Lua (via Puppeteer + Scribunto Debug Console) to JSON
-3. **Attributes** each JSON file with source URL, license, and original Lua comments
+2. **Archives** all modules as HTML and extracted Lua source code
+3. **Converts** stale modules from Lua (via Puppeteer + Scribunto Debug Console) to JSON
+4. **Attributes** each JSON file with source URL, license, and original Lua comments
 
 The resulting JSON files are published to the [wf-wiki-module-data](https://github.com/420gaming420/wf-wiki-module-data) repository.
 
@@ -34,6 +35,54 @@ python3 request.py [--config config.ini]
 |---|---|
 | `--config CONFIG` | Path to config.ini (default: `config.ini`) |
 | `--force-collect` | Force re-fetch the full module catalog from the wiki API (overwrites any cached `all_wfwiki_modules_merged.json`) |
+
+---
+
+### `download.py` — HTML Archive Downloader
+
+Downloads HTML pages for all wiki modules (excluding test/sandbox) to `data/html/`.
+
+```bash
+python3 download.py [--config config.ini] [--force] [--page NAME]
+```
+
+- Downloads ~515 actual modules (filters out test/sandbox)
+- Respects `staleness_hours` to avoid redundant downloads
+- Skips modules with matching wiki timestamps
+- **Does NOT** use `ignore_modules.json` (archives everything)
+
+**Options:**
+| Flag | Description |
+|---|---|
+| `--config CONFIG` | Path to config.ini (default: `config.ini`) |
+| `--force` | Force re-download all modules regardless of staleness |
+| `--page NAME` | Download only a single module (for testing) |
+
+**Example:**
+```bash
+python3 download.py --page "Module:Arcane/infobox"
+```
+
+---
+
+### `extract_lua.py` — Lua Source Extractor
+
+Extracts Lua source code from downloaded HTML files to `data/lua/`.
+
+```bash
+python3 extract_lua.py [--config config.ini] [--force]
+```
+
+- Reads HTML files from `data/html/`
+- Extracts Lua code blocks from `<pre>` tags
+- Saves to `data/lua/` with corresponding metadata
+- Respects `staleness_hours` to avoid redundant extraction
+
+**Options:**
+| Flag | Description |
+|---|---|
+| `--config CONFIG` | Path to config.ini (default: `config.ini`) |
+| `--force` | Force re-extraction of all modules |
 
 ---
 
@@ -79,7 +128,7 @@ python3 attribution.py [--config config.ini] [--force] [--dry-run] [--verbose]
     "source_url": "https://wiki.warframe.com/w/Module:Ability/data",
     "license": "CC BY-NC-SA 3.0",
     "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
-    "converter_repo": "https://github.com/420gaming420/wf-wiki-module-scripts",
+    "converter_repo": "https://github.com/your-username/wf-wiki-module-scripts",
     "converted_at": "2026-08-29T15:12:00.785Z"
   },
   "_comments": "-- Database for Module:Ability\n-- Note that [\"Warframe\"] subtable indexes...",
@@ -90,17 +139,16 @@ python3 attribution.py [--config config.ini] [--force] [--dry-run] [--verbose]
 **Options:**
 | Flag | Description |
 |---|---|
-| `--force` | Process ALL JSON files in the output directory regardless of staleness (rewrites `_attribution` and re-fetches `_comments` for every file) |
+| `--force` | Process ALL JSON files in the output directory regardless of staleness (rewrites `_attribution`) |
 | `--dry-run` | Show what would change without writing anything |
 | `--verbose` | Print detailed per-file information |
 
 **Comment extraction:**
-- Fetches live HTML from the wiki (respects `rate_limit` in config)
-- Extracts the Lua code block from `<pre>` tags
-- Collects all comment lines: `-- single-line`, `--[=[ multi-line ]=]`, embedded comments
+- Reads Lua source from local `data/lua/` files (no network requests)
+- Extracts all comment lines: `-- single-line`, `--[=[ multi-line ]=]`, embedded comments
 - Deduplicates while preserving order
 
-> **Note:** `--dry-run` skips all network activity. Use `--force --dry-run` to preview changes without fetching.
+> **Note:** `--dry-run` skips all file writes. Use `--force --dry-run` to preview changes.
 
 ---
 
@@ -114,21 +162,62 @@ bash workflow.sh [--dry-run]
 
 **Steps:**
 1. Run `request.py` to find stale modules
-2. Run `convert_module.js --batch` to convert each stale module
-3. Run `attribution.py --force` to add attribution and comments
-4. Print summary with timing and counts
+2. Run `download.py` to archive HTML files
+3. Run `extract_lua.py` to extract Lua source
+4. Run `convert_module.js --batch` to convert stale modules to JSON
+5. Run `attribution.py` to add attribution and comments
+6. Print summary with timing and counts
 
 > **Note on `--dry-run`:** This flag only checks whether `stale_modules.json` exists and prints how many modules would be converted. It does not execute any of the pipeline steps.
+
+**Error handling:**
+- `request.py` failure: aborts workflow
+- `convert_module.js` failure: aborts workflow
+- `download.py` / `extract_lua.py` / `attribution.py` failure: logs warning and continues
 
 **Output format:**
 ```
 [INFO] ==================================
 [INFO] WARFRAME Wiki Module Sync Workflow
 [INFO] ==================================
-[INFO] Request.py duration: 17s
-[INFO] Convert_module.js duration: 18m 5s
-[INFO] Total workflow duration: 19m 2s
+[INFO] request.py duration: 17s
+[INFO] download.py duration: 5m 30s
+[INFO] extract_lua.py duration: 2m 15s
+[INFO] convert_module.js duration: 18m 5s
+[INFO] Total workflow duration: 26m 7s
 [INFO] ==================================
+```
+
+## Data Structure
+
+```
+data/
+├── html/           # ~515 HTML files (one per wiki module)
+│   ├── Module-Ability-data.html
+│   ├── Module-Ability-data.meta.json
+│   └── ...
+├── lua/            # ~515 Lua source files (extracted from HTML)
+│   ├── Module-Ability-data.lua
+│   ├── Module-Ability-data.meta.json
+│   └── ...
+├── json/           # ~177 JSON files (Scribunto-converted)
+│   ├── Module-Ability-data.json
+│   ├── Module-Ability-data.meta.json
+│   └── ...
+└── logs/           # Workflow logs
+```
+
+**Metadata format:**
+```json
+{
+  "page": "Module:Ability/data",
+  "wiki_timestamp": "2026-07-29T23:49:20Z",
+  "downloaded_at": "2026-08-30T16:00:00Z",
+  "extracted_at": "2026-08-30T16:00:01Z",
+  "converted_at": "2026-08-30T16:00:02Z",
+  "file_size": 221044,
+  "status": "success"
+}
 ```
 
 ## Configuration
@@ -139,9 +228,14 @@ Edit `config.ini` to customize behavior:
 [wiki]
 base_url = https://wiki.warframe.com
 api_url = https://wiki.warframe.com/api.php
-user_agent = User-Agent: clientname/version (contact information e.g. username, email) framework/version...
 rate_limit = 1.0          # seconds between requests
-staleness_hours = 24      # only convert modules newer than this
+staleness_hours = 24      # only process modules newer than this
+
+[user_agents]
+# Replace with your own contact information
+wiki_client = WFModuleMirror/1.0 (your-contact@example.com)
+download = WFModuleDownload/1.0 (your-contact@example.com)
+attribution = WFModuleAttribution/1.0 (your-contact@example.com)
 
 [conversion]
 timeout_ms = 60000        # per-module Puppeteer timeout
@@ -150,17 +244,23 @@ browser_timeout = 30000   # browser launch timeout
 [paths]
 stale_modules = stale_modules.json
 ignore_modules = ignore_modules.json
+catalog_file = all_wfwiki_modules_merged.json
 output_dir = data/json
 metadata_dir = data/json
+html_dir = data/html
+lua_dir = data/lua
+log_dir = data/logs
 
 [github]
 max_consecutive_errors = 3  # disable action after N crashes
-url = https://github.com/420gaming420/wf-wiki-module-scripts
+url = https://github.com/your-username/wf-wiki-module-scripts
 ```
+
+> **Note:** `config.ini` is git-ignored. A template is generated on first run.
 
 ## Ignored Modules
 
-**337 modules** cannot be converted automatically. They are listed in `ignore_modules.json` and skipped during conversion. Common reasons:
+**337 modules** cannot be converted automatically. They are listed in `ignore_modules.json` and skipped during JSON conversion. Common reasons:
 
 | Category | Reason |
 |---|---|
@@ -169,17 +269,19 @@ url = https://github.com/420gaming420/wf-wiki-module-scripts
 | mw.loadData errors | Tables with metatables (MediaWiki-specific) |
 | JSON parse errors | `Infinity` values in Lua output (not valid JSON) |
 
-## Data Repository
+> **Note:** `ignore_modules.json` only affects JSON conversion. HTML/Lua archives download all modules regardless.
 
-Converted JSON files are published to:
-**<https://github.com/420gaming420/wf-wiki-module-data>**
+## Utility Modules
 
-This is a **read-only mirror** — to modify data, edit the source on the [WARFRAME Wiki](https://wiki.warframe.com).
+Shared code is extracted to `utils/` to avoid duplication:
+
+- `utils/wiki_client.py` — Rate-limited HTTP client (1s minimum delay, gzip support)
+- `utils/lua_extractor.py` — HTML parsing and Lua comment extraction
 
 ## Requirements
 
 - **Node.js** 22+ (for `convert_module.js`)
-- **Python** 3.10+ (for `request.py`, `attribution.py`)
+- **Python** 3.10+ (for `request.py`, `download.py`, `extract_lua.py`, `attribution.py`)
 - **puppeteer** npm package
 - **bash** (for `workflow.sh`)
 

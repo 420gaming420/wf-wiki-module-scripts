@@ -189,7 +189,7 @@ async function initBatchBrowser() {
 
   const page = await browser.newPage();
   await page.setUserAgent(
-    'puppeteer_wf-wiki-module-mirror (https://github.com/420gaming420/wf-wiki-module-scripts)'
+    'puppeteer_wf-wiki-module-mirror (https://github.com/your-username/wf-wiki-module-scripts)'
   );
 
   const editUrl = `${config.wikiBaseUrl}/w/Module:Sandbox/ScribuntoDebugConsole?action=edit`;
@@ -305,7 +305,7 @@ async function convertModuleToJson(moduleName, options = {}, batchPage = null) {
     });
     page = await browser.newPage();
     await page.setUserAgent(
-      'puppeteer_wf-wiki-module-mirror (https://github.com/420gaming420/wf-wiki-module-scripts)'
+    'puppeteer_wf-wiki-module-mirror (https://github.com/your-username/wf-wiki-module-scripts)'
     );
     const editUrl = `${config.wikiBaseUrl}/w/Module:Sandbox/ScribuntoDebugConsole?action=edit`;
     console.log(`  Navigating to: ${editUrl}`);

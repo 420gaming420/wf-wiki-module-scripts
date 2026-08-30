@@ -37,3 +37,5 @@ yarn-error.log*
 
 # --- Generated files ---
 stale_modules.json
+all_wfwiki_modules_merged.json
+package-lock.json
