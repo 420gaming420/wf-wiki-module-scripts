@@ -1,0 +1,2026 @@
+{
+  "ignored_modules": [
+    {
+      "module": "Module:Ability",
+      "reason": "Failed to convert Module:Ability: Waiting for selector `.mw-scribunto-print` failed",
+      "ignored_at": "2026-08-29T15:57:00.708Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Ability/Conclave/data/doc",
+      "reason": "Failed to convert Module:Ability/Conclave/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Ability/Conclave/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"consol",
+      "ignored_at": "2026-08-29T15:57:02.421Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Ability/data/doc",
+      "reason": "Failed to convert Module:Ability/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Ability/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T15:57:04.112Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Ability/doc",
+      "reason": "Failed to convert Module:Ability/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Ability/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C",
+      "ignored_at": "2026-08-29T15:57:05.805Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Ability/infobox",
+      "reason": "Failed to convert Module:Ability/infobox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:57:07.494Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Ability/infobox/doc",
+      "reason": "Failed to convert Module:Ability/infobox/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Ability/infobox/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console inpu",
+      "ignored_at": "2026-08-29T15:57:09.191Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Acquisition",
+      "reason": "Failed to convert Module:Acquisition: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:57:10.887Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Acquisition/dev",
+      "reason": "Failed to convert Module:Acquisition/dev: Lua error: Lua error in package.lua at line 80: module 'Dev:Entrypoint' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"Module:Acquisition/dev:3",
+      "ignored_at": "2026-08-29T15:57:12.579Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Acquisition/doc",
+      "reason": "Failed to convert Module:Acquisition/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Acquisition/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8:",
+      "ignored_at": "2026-08-29T15:57:14.275Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Animal/infobox",
+      "reason": "Failed to convert Module:Animal/infobox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:57:15.963Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Animal/infobox/doc",
+      "reason": "Failed to convert Module:Animal/infobox/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Animal/infobox/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input",
+      "ignored_at": "2026-08-29T15:57:17.626Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Arcane",
+      "reason": "Failed to convert Module:Arcane: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:57:19.317Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Arcane/data/doc",
+      "reason": "Failed to convert Module:Arcane/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Arcane/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8:",
+      "ignored_at": "2026-08-29T15:57:20.979Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Arcane/doc",
+      "reason": "Failed to convert Module:Arcane/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Arcane/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]",
+      "ignored_at": "2026-08-29T15:57:22.665Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Arcane/infobox",
+      "reason": "Failed to convert Module:Arcane/infobox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:57:24.306Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:ArchModBox",
+      "reason": "Failed to convert Module:ArchModBox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:57:26.002Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Arguments",
+      "reason": "Failed to convert Module:Arguments: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:57:27.697Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Arguments/doc",
+      "reason": "Failed to convert Module:Arguments/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Arguments/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T15:57:29.387Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Arguments/i18n/doc",
+      "reason": "Failed to convert Module:Arguments/i18n/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Arguments/i18n/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input",
+      "ignored_at": "2026-08-29T15:57:31.075Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Avionics",
+      "reason": "Failed to convert Module:Avionics: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:57:32.753Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Avionics/data/doc",
+      "reason": "Failed to convert Module:Avionics/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Avionics/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:",
+      "ignored_at": "2026-08-29T15:57:34.438Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Avionics/doc",
+      "reason": "Failed to convert Module:Avionics/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Avionics/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[",
+      "ignored_at": "2026-08-29T15:57:36.091Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Baro",
+      "reason": "Failed to convert Module:Baro: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:57:37.781Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Baro/data/doc",
+      "reason": "Failed to convert Module:Baro/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Baro/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T15:57:39.412Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Baro/data/typeConfigs/doc",
+      "reason": "Failed to convert Module:Baro/data/typeConfigs/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Baro/data/typeConfigs/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"consol",
+      "ignored_at": "2026-08-29T15:57:41.070Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Baro/data/visits/doc",
+      "reason": "Failed to convert Module:Baro/data/visits/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Baro/data/visits/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console inp",
+      "ignored_at": "2026-08-29T15:57:42.719Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Baro/doc",
+      "reason": "Failed to convert Module:Baro/doc: Waiting for selector `.mw-scribunto-print` failed",
+      "ignored_at": "2026-08-29T15:57:59.409Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Baro/history",
+      "reason": "Failed to convert Module:Baro/history: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:58:01.071Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Baro/history/doc",
+      "reason": "Failed to convert Module:Baro/history/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Baro/history/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T15:58:02.729Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Blueprints/data/doc",
+      "reason": "Failed to convert Module:Blueprints/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Blueprints/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console inpu",
+      "ignored_at": "2026-08-29T15:58:04.415Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:BuildRequire",
+      "reason": "Failed to convert Module:BuildRequire: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:58:06.096Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:CSV",
+      "reason": "Failed to convert Module:CSV: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:58:07.789Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:CSV/doc",
+      "reason": "Failed to convert Module:CSV/doc: Lua error: Lua error in package.lua at line 80: module 'Module:CSV/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]: ?",
+      "ignored_at": "2026-08-29T15:58:09.482Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:ChickenArchive",
+      "reason": "Failed to convert Module:ChickenArchive: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:58:11.167Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Codec",
+      "reason": "Failed to convert Module:Codec: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:58:12.856Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Codec/doc",
+      "reason": "Failed to convert Module:Codec/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Codec/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]:",
+      "ignored_at": "2026-08-29T15:58:14.554Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Codex",
+      "reason": "Failed to convert Module:Codex: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:58:16.240Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Codex/data/doc",
+      "reason": "Failed to convert Module:Codex/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Codex/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ",
+      "ignored_at": "2026-08-29T15:58:17.926Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Codex/doc",
+      "reason": "Failed to convert Module:Codex/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Codex/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]:",
+      "ignored_at": "2026-08-29T15:58:19.585Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Common",
+      "reason": "Failed to convert Module:Common: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:58:21.267Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Common/doc",
+      "reason": "Failed to convert Module:Common/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Common/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]",
+      "ignored_at": "2026-08-29T15:58:22.936Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Common/i18n/doc",
+      "reason": "Failed to convert Module:Common/i18n/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Common/i18n/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8:",
+      "ignored_at": "2026-08-29T15:58:24.624Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Companions/data/doc",
+      "reason": "Failed to convert Module:Companions/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Companions/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console inpu",
+      "ignored_at": "2026-08-29T15:58:26.305Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Companions/infobox",
+      "reason": "Failed to convert Module:Companions/infobox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:58:27.984Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Conservation",
+      "reason": "Failed to convert Module:Conservation: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:58:29.678Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Conservation/data/doc",
+      "reason": "Failed to convert Module:Conservation/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Conservation/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console in",
+      "ignored_at": "2026-08-29T15:58:31.377Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Conservation/doc",
+      "reason": "Failed to convert Module:Conservation/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Conservation/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T15:58:33.057Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Conservation/infobox",
+      "reason": "Failed to convert Module:Conservation/infobox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:58:34.753Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Conservation/infobox/doc",
+      "reason": "Failed to convert Module:Conservation/infobox/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Conservation/infobox/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console",
+      "ignored_at": "2026-08-29T15:58:36.447Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Cosmetics",
+      "reason": "Failed to convert Module:Cosmetics: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:58:38.134Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Cosmetics/data/doc",
+      "reason": "Failed to convert Module:Cosmetics/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Cosmetics/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input",
+      "ignored_at": "2026-08-29T15:58:39.835Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Cosmetics/data/validate",
+      "reason": "Failed to convert Module:Cosmetics/data/validate: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:58:41.519Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Cosmetics/doc",
+      "reason": "Failed to convert Module:Cosmetics/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Cosmetics/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T15:58:43.207Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Cosmetics/infobox",
+      "reason": "Failed to convert Module:Cosmetics/infobox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:58:44.892Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Cosmetics/userdata/doc",
+      "reason": "Failed to convert Module:Cosmetics/userdata/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Cosmetics/userdata/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console i",
+      "ignored_at": "2026-08-29T15:58:46.580Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Cost",
+      "reason": "Failed to convert Module:Cost: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:58:48.267Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Cost/doc",
+      "reason": "Failed to convert Module:Cost/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Cost/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]: ",
+      "ignored_at": "2026-08-29T15:58:49.967Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:DamageTypes",
+      "reason": "Failed to convert Module:DamageTypes: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:58:51.659Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:DamageTypes/data/doc",
+      "reason": "Failed to convert Module:DamageTypes/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:DamageTypes/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console inp",
+      "ignored_at": "2026-08-29T15:58:53.342Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:DamageTypes/doc",
+      "reason": "Failed to convert Module:DamageTypes/doc: Lua error: Lua error in package.lua at line 80: module 'Module:DamageTypes/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8:",
+      "ignored_at": "2026-08-29T15:58:55.030Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Database",
+      "reason": "Failed to convert Module:Database: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:58:56.717Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Database/doc",
+      "reason": "Failed to convert Module:Database/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Database/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[",
+      "ignored_at": "2026-08-29T15:58:58.410Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:DatastoreManifest/doc",
+      "reason": "Failed to convert Module:DatastoreManifest/doc: Lua error: Lua error in package.lua at line 80: module 'Module:DatastoreManifest/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console in",
+      "ignored_at": "2026-08-29T15:59:00.096Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Date",
+      "reason": "Failed to convert Module:Date: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:59:01.785Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Date/doc",
+      "reason": "Failed to convert Module:Date/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Date/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]: ",
+      "ignored_at": "2026-08-29T15:59:03.478Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Decorations",
+      "reason": "Failed to convert Module:Decorations: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:59:05.177Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Decorations/data/doc",
+      "reason": "Failed to convert Module:Decorations/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Decorations/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console inp",
+      "ignored_at": "2026-08-29T15:59:06.867Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Decorations/doc",
+      "reason": "Failed to convert Module:Decorations/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Decorations/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8:",
+      "ignored_at": "2026-08-29T15:59:08.554Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Decrees/data/doc",
+      "reason": "Failed to convert Module:Decrees/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Decrees/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T15:59:10.243Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Delay",
+      "reason": "Failed to convert Module:Delay: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:59:11.932Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Delay/doc",
+      "reason": "Failed to convert Module:Delay/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Delay/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]:",
+      "ignored_at": "2026-08-29T15:59:13.616Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:DependencyGraph",
+      "reason": "Failed to convert Module:DependencyGraph: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:59:15.304Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:DependencyGraph/doc",
+      "reason": "Failed to convert Module:DependencyGraph/doc: Lua error: Lua error in package.lua at line 80: module 'Module:DependencyGraph/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console inpu",
+      "ignored_at": "2026-08-29T15:59:16.993Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:DevShortParticipantsList",
+      "reason": "Failed to convert Module:DevShortParticipantsList: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:59:18.679Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:DevStreamParticipantsList",
+      "reason": "Failed to convert Module:DevStreamParticipantsList: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:59:20.360Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:DevstreamParticipantsList",
+      "reason": "Failed to convert Module:DevstreamParticipantsList: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:59:22.062Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Docbunto",
+      "reason": "Failed to convert Module:Docbunto: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:59:23.754Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Docbunto/cli",
+      "reason": "Failed to convert Module:Docbunto/cli: Lua error: Lua error in package.lua at line 80: module 'Dev:Docbunto' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"Module:Docbunto/cli:1: in ",
+      "ignored_at": "2026-08-29T15:59:25.443Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Docbunto/cli/doc",
+      "reason": "Failed to convert Module:Docbunto/cli/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Docbunto/cli/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T15:59:27.127Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Docbunto/doc",
+      "reason": "Failed to convert Module:Docbunto/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Docbunto/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[",
+      "ignored_at": "2026-08-29T15:59:28.815Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Docbunto/i18n/doc",
+      "reason": "Failed to convert Module:Docbunto/i18n/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Docbunto/i18n/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:",
+      "ignored_at": "2026-08-29T15:59:30.501Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Docbunto/references/doc",
+      "reason": "Failed to convert Module:Docbunto/references/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Docbunto/references/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console ",
+      "ignored_at": "2026-08-29T15:59:32.190Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:DropTables",
+      "reason": "Failed to convert Module:DropTables: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:59:33.865Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:DropTables/JSON/doc",
+      "reason": "Failed to convert Module:DropTables/JSON/doc: Lua error: Lua error in package.lua at line 80: module 'Module:DropTables/JSON/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console inpu",
+      "ignored_at": "2026-08-29T15:59:35.554Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:DropTables/data/doc",
+      "reason": "Failed to convert Module:DropTables/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:DropTables/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console inpu",
+      "ignored_at": "2026-08-29T15:59:37.242Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:DropTables/dev",
+      "reason": "Failed to convert Module:DropTables/dev: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:59:38.939Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:DropTables/dev/doc",
+      "reason": "Failed to convert Module:DropTables/dev/doc: Lua error: Lua error in package.lua at line 80: module 'Module:DropTables/dev/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input",
+      "ignored_at": "2026-08-29T15:59:40.628Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:DropTables/doc",
+      "reason": "Failed to convert Module:DropTables/doc: Lua error: Lua error in package.lua at line 80: module 'Module:DropTables/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ",
+      "ignored_at": "2026-08-29T15:59:42.314Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Emptylord",
+      "reason": "Failed to convert Module:Emptylord: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:59:43.996Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Emptylord/data/doc",
+      "reason": "Failed to convert Module:Emptylord/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Emptylord/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input",
+      "ignored_at": "2026-08-29T15:59:45.687Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Emptylord/getter",
+      "reason": "Failed to convert Module:Emptylord/getter: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:59:47.367Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Enemies/data/doc",
+      "reason": "Failed to convert Module:Enemies/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Enemies/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T15:59:49.036Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Enemies/data/pre-U36/doc",
+      "reason": "Failed to convert Module:Enemies/data/pre-U36/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Enemies/data/pre-U36/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console",
+      "ignored_at": "2026-08-29T15:59:50.700Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Enemies/data/unaffiliated/doc",
+      "reason": "Failed to convert Module:Enemies/data/unaffiliated/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Enemies/data/unaffiliated/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"co",
+      "ignored_at": "2026-08-29T15:59:52.395Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Enemies/infobox",
+      "reason": "Failed to convert Module:Enemies/infobox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:59:54.082Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Enemies/infobox/dev",
+      "reason": "Failed to convert Module:Enemies/infobox/dev: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T15:59:55.775Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Enemies/infobox/doc",
+      "reason": "Failed to convert Module:Enemies/infobox/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Enemies/infobox/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console inpu",
+      "ignored_at": "2026-08-29T15:59:57.438Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Entrypoint",
+      "reason": "Failed to convert Module:Entrypoint: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"console input:9: ?[C]: ?",
+      "ignored_at": "2026-08-29T15:59:59.134Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Entrypoint/doc",
+      "reason": "Failed to convert Module:Entrypoint/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Entrypoint/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ",
+      "ignored_at": "2026-08-29T16:00:00.821Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Enum/data/doc",
+      "reason": "Failed to convert Module:Enum/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Enum/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T16:00:02.513Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:FactionScript",
+      "reason": "Failed to convert Module:FactionScript: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:00:04.197Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:FactionScript/data/doc",
+      "reason": "Failed to convert Module:FactionScript/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:FactionScript/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console i",
+      "ignored_at": "2026-08-29T16:00:05.862Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:FactionScript/doc",
+      "reason": "Failed to convert Module:FactionScript/doc: Lua error: Lua error in package.lua at line 80: module 'Module:FactionScript/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:",
+      "ignored_at": "2026-08-29T16:00:07.548Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Factions/data/doc",
+      "reason": "Failed to convert Module:Factions/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Factions/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:",
+      "ignored_at": "2026-08-29T16:00:09.185Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:FallbackList/doc",
+      "reason": "Failed to convert Module:FallbackList/doc: Lua error: Lua error in package.lua at line 80: module 'Module:FallbackList/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T16:00:10.874Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Flaicher",
+      "reason": "Failed to convert Module:Flaicher: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:00:12.563Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Flaicher/Conv",
+      "reason": "Failed to convert Module:Flaicher/Conv: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:00:14.254Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Flaicher/DropTables",
+      "reason": "Failed to convert Module:Flaicher/DropTables: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:00:15.948Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Flaicher/Mods",
+      "reason": "Failed to convert Module:Flaicher/Mods: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:00:17.640Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Focus",
+      "reason": "Failed to convert Module:Focus: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:00:19.346Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Focus/data/doc",
+      "reason": "Failed to convert Module:Focus/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Focus/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ",
+      "ignored_at": "2026-08-29T16:00:21.018Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Focus/doc",
+      "reason": "Failed to convert Module:Focus/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Focus/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]:",
+      "ignored_at": "2026-08-29T16:00:22.704Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Focus/infobox",
+      "reason": "Failed to convert Module:Focus/infobox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:00:24.390Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:FormatingTool",
+      "reason": "Failed to convert Module:FormatingTool: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:00:26.079Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:FormatingTool/doc",
+      "reason": "Failed to convert Module:FormatingTool/doc: Lua error: Lua error in package.lua at line 80: module 'Module:FormatingTool/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:",
+      "ignored_at": "2026-08-29T16:00:27.775Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Gallery",
+      "reason": "Failed to convert Module:Gallery: Lua error: Lua error in Module:Gallery at line 46: data for mw.loadData contains a table with a metatable.Backtrace:[C]: in function \"error\"mw.lua:878: in function \"loadData\"Module:Gallery:46: in function \"init\"",
+      "ignored_at": "2026-08-29T16:00:29.466Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Gallery/doc",
+      "reason": "Failed to convert Module:Gallery/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Gallery/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C",
+      "ignored_at": "2026-08-29T16:00:31.155Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:GuaranteedRewards/data/doc",
+      "reason": "Failed to convert Module:GuaranteedRewards/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:GuaranteedRewards/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"conso",
+      "ignored_at": "2026-08-29T16:00:32.844Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:I18n",
+      "reason": "Failed to convert Module:I18n: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:00:34.531Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:I18n/doc",
+      "reason": "Failed to convert Module:I18n/doc: Lua error: Lua error in package.lua at line 80: module 'Module:I18n/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]: ",
+      "ignored_at": "2026-08-29T16:00:36.225Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Icon",
+      "reason": "Failed to convert Module:Icon: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:00:37.915Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Icon/data/doc",
+      "reason": "Failed to convert Module:Icon/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Icon/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T16:00:39.607Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Icon/doc",
+      "reason": "Failed to convert Module:Icon/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Icon/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]: ",
+      "ignored_at": "2026-08-29T16:00:41.265Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Infobox",
+      "reason": "Failed to convert Module:Infobox: Lua error: Lua error in package.lua at line 80: module 'Dev:Infobox/data' not found.Backtrace:[C]: in function \"error\"mw.lua:554: in function \"executeModule\"mw.lua:865: in function \"loadData\"Module:Infobox:27: i",
+      "ignored_at": "2026-08-29T16:00:42.958Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Infobox/doc",
+      "reason": "Failed to convert Module:Infobox/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Infobox/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C",
+      "ignored_at": "2026-08-29T16:00:44.642Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Infobox/i18n/doc",
+      "reason": "Failed to convert Module:Infobox/i18n/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Infobox/i18n/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T16:00:46.324Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:InfoboxBuilder",
+      "reason": "Failed to convert Module:InfoboxBuilder: Waiting for selector `.mw-scribunto-print` failed",
+      "ignored_at": "2026-08-29T16:01:02.993Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:InfoboxBuilder/dev",
+      "reason": "Failed to convert Module:InfoboxBuilder/dev: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"console input:9: ?[C]: ?",
+      "ignored_at": "2026-08-29T16:01:04.820Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:InfoboxBuilder/doc",
+      "reason": "Failed to convert Module:InfoboxBuilder/doc: Lua error: Lua error in package.lua at line 80: module 'Module:InfoboxBuilder/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input",
+      "ignored_at": "2026-08-29T16:01:06.517Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:InfoboxGallery",
+      "reason": "Failed to convert Module:InfoboxGallery: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:01:08.194Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Inspect",
+      "reason": "Failed to convert Module:Inspect: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:01:09.893Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Inspect/doc",
+      "reason": "Failed to convert Module:Inspect/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Inspect/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C",
+      "ignored_at": "2026-08-29T16:01:11.559Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:InternalNames",
+      "reason": "Failed to convert Module:InternalNames: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:01:13.246Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:InternalNames/doc",
+      "reason": "Failed to convert Module:InternalNames/doc: Lua error: Lua error in package.lua at line 80: module 'Module:InternalNames/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:",
+      "ignored_at": "2026-08-29T16:01:14.943Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:JSON",
+      "reason": "Failed to convert Module:JSON: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:01:16.600Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:JSON/doc",
+      "reason": "Failed to convert Module:JSON/doc: Lua error: Lua error in package.lua at line 80: module 'Module:JSON/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]: ",
+      "ignored_at": "2026-08-29T16:01:18.254Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:KeyBindings",
+      "reason": "Failed to convert Module:KeyBindings: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:01:19.982Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:KeyBindings/data/doc",
+      "reason": "Failed to convert Module:KeyBindings/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:KeyBindings/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console inp",
+      "ignored_at": "2026-08-29T16:01:21.708Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Keys/data/doc",
+      "reason": "Failed to convert Module:Keys/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Keys/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T16:01:23.465Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Lang",
+      "reason": "Failed to convert Module:Lang: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:01:25.163Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:LanguageList",
+      "reason": "Failed to convert Module:LanguageList: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:01:26.867Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:LanguageList/doc",
+      "reason": "Failed to convert Module:LanguageList/doc: Lua error: Lua error in package.lua at line 80: module 'Module:LanguageList/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T16:01:28.549Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Lexer",
+      "reason": "Failed to convert Module:Lexer: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"console input:9: ?[C]: ?",
+      "ignored_at": "2026-08-29T16:01:30.238Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Lexer/doc",
+      "reason": "Failed to convert Module:Lexer/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Lexer/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]:",
+      "ignored_at": "2026-08-29T16:01:31.918Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Localization",
+      "reason": "Failed to convert Module:Localization: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:01:33.606Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Localization/Suits.json",
+      "reason": "Failed to convert Module:Localization/Suits.json: Lua error: Lua error in package.lua at line 80: module 'Module:Localization/Suits.json' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console ",
+      "ignored_at": "2026-08-29T16:01:35.294Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Localization/doc",
+      "reason": "Failed to convert Module:Localization/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Localization/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T16:01:36.964Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Lua",
+      "reason": "Failed to convert Module:Lua: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:01:38.657Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Lua/doc",
+      "reason": "Failed to convert Module:Lua/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Lua/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]: ?",
+      "ignored_at": "2026-08-29T16:01:40.348Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:LuaClassSystem",
+      "reason": "Failed to convert Module:LuaClassSystem: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"Module:JSON:134: i",
+      "ignored_at": "2026-08-29T16:01:42.014Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:LuaClassSystem/doc",
+      "reason": "Failed to convert Module:LuaClassSystem/doc: Lua error: Lua error in package.lua at line 80: module 'Module:LuaClassSystem/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input",
+      "ignored_at": "2026-08-29T16:01:43.687Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:LuaSerializer",
+      "reason": "Failed to convert Module:LuaSerializer: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:01:45.376Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:LuaSerializer/dev",
+      "reason": "Failed to convert Module:LuaSerializer/dev: Lua error: Lua error in package.lua at line 80: module 'Dev:I18n' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"Module:LuaSerializer/dev:5: in",
+      "ignored_at": "2026-08-29T16:01:47.031Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:LuaSerializer/dev/doc",
+      "reason": "Failed to convert Module:LuaSerializer/dev/doc: Lua error: Lua error in package.lua at line 80: module 'Module:LuaSerializer/dev/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console in",
+      "ignored_at": "2026-08-29T16:01:48.714Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:LuaSerializer/doc",
+      "reason": "Failed to convert Module:LuaSerializer/doc: Lua error: Lua error in package.lua at line 80: module 'Module:LuaSerializer/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:",
+      "ignored_at": "2026-08-29T16:01:50.401Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:LuaSerializerTwo/doc",
+      "reason": "Failed to convert Module:LuaSerializerTwo/doc: Lua error: Lua error in package.lua at line 80: module 'Module:LuaSerializerTwo/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console inp",
+      "ignored_at": "2026-08-29T16:01:52.089Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Map",
+      "reason": "Failed to convert Module:Map: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:01:53.769Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Map/doc",
+      "reason": "Failed to convert Module:Map/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Map/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]: ?",
+      "ignored_at": "2026-08-29T16:01:55.463Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:MasteryRank",
+      "reason": "Failed to convert Module:MasteryRank: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:01:57.162Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:MasteryRank/dev",
+      "reason": "Failed to convert Module:MasteryRank/dev: Lua error: Lua error in package.lua at line 80: module 'Dev:Arguments' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"Module:MasteryRank/dev:24",
+      "ignored_at": "2026-08-29T16:01:58.856Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:MasteryRank/doc",
+      "reason": "Failed to convert Module:MasteryRank/doc: Lua error: Lua error in package.lua at line 80: module 'Module:MasteryRank/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8:",
+      "ignored_at": "2026-08-29T16:02:00.545Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Math",
+      "reason": "Failed to convert Module:Math: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:02:02.235Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Math/dev",
+      "reason": "Failed to convert Module:Math/dev: Lua error: Lua error in package.lua at line 80: module 'Dev:Arguments' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"Module:Math/dev:45: in fu",
+      "ignored_at": "2026-08-29T16:02:03.927Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Math/doc",
+      "reason": "Failed to convert Module:Math/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Math/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]: ",
+      "ignored_at": "2026-08-29T16:02:05.613Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Math/i18n/doc",
+      "reason": "Failed to convert Module:Math/i18n/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Math/i18n/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T16:02:07.307Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Maximization",
+      "reason": "Failed to convert Module:Maximization: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:02:08.990Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Maximization/data/doc",
+      "reason": "Failed to convert Module:Maximization/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Maximization/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console in",
+      "ignored_at": "2026-08-29T16:02:10.682Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Mbox",
+      "reason": "Failed to convert Module:Mbox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:02:12.372Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Mbox/doc",
+      "reason": "Failed to convert Module:Mbox/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Mbox/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]: ",
+      "ignored_at": "2026-08-29T16:02:14.061Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Mbox/i18n/doc",
+      "reason": "Failed to convert Module:Mbox/i18n/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Mbox/i18n/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T16:02:15.756Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Missions",
+      "reason": "Failed to convert Module:Missions: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:02:17.444Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Missions/data",
+      "reason": "Failed to convert Module:Missions/data: JSON parse error: Expected double-quoted property name in JSON at position 471 (line 1 column 472)\nOutput: {\"FactionImages\":{\"Techrot\":\"TechrotIcon.png\", \"Grineer or Corpus\":\"IconGrineerOrCorpus.png\", \"Grineer and Corpus\":\"IconGrineerOrCorpus.png\", \"Orokin\":\"IconOrokinB.svg\", \"Duviri\":\"DuviriIcon.png\", \"Te",
+      "ignored_at": "2026-08-29T16:02:22.841Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Missions/data/doc",
+      "reason": "Failed to convert Module:Missions/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Missions/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:",
+      "ignored_at": "2026-08-29T16:02:24.549Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Missions/doc",
+      "reason": "Failed to convert Module:Missions/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Missions/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[",
+      "ignored_at": "2026-08-29T16:02:26.254Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Missions/infobox",
+      "reason": "Failed to convert Module:Missions/infobox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:02:27.919Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Missions/page",
+      "reason": "Failed to convert Module:Missions/page: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:02:29.616Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Mods",
+      "reason": "Failed to convert Module:Mods: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:02:31.309Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Mods/csv",
+      "reason": "Failed to convert Module:Mods/csv: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:02:32.979Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Mods/csv2",
+      "reason": "Failed to convert Module:Mods/csv2: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:02:34.645Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Mods/data/doc",
+      "reason": "Failed to convert Module:Mods/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Mods/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T16:02:36.324Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Mods/data/validate",
+      "reason": "Failed to convert Module:Mods/data/validate: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:02:38.010Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Mods/data/validate/doc",
+      "reason": "Failed to convert Module:Mods/data/validate/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Mods/data/validate/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console i",
+      "ignored_at": "2026-08-29T16:02:39.701Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Mods/doc",
+      "reason": "Failed to convert Module:Mods/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Mods/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]: ",
+      "ignored_at": "2026-08-29T16:02:41.379Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Mods/infobox",
+      "reason": "Failed to convert Module:Mods/infobox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:02:43.073Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Mods/itemCompatibility",
+      "reason": "Failed to convert Module:Mods/itemCompatibility: Lua error: Lua error in Module:Mods/itemCompatibility at line 6: data for mw.loadData contains a table with a metatable.Backtrace:[C]: in function \"error\"mw.lua:878: in function \"loadData\"Module:Mods/itemCompati",
+      "ignored_at": "2026-08-29T16:02:44.768Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Mods/itemCompatibility/doc",
+      "reason": "Failed to convert Module:Mods/itemCompatibility/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Mods/itemCompatibility/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"conso",
+      "ignored_at": "2026-08-29T16:02:46.449Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Modular",
+      "reason": "Failed to convert Module:Modular: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:02:48.135Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Modular/data/doc",
+      "reason": "Failed to convert Module:Modular/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Modular/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T16:02:49.834Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Modular/doc",
+      "reason": "Failed to convert Module:Modular/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Modular/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C",
+      "ignored_at": "2026-08-29T16:02:51.526Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Modular/generator",
+      "reason": "Failed to convert Module:Modular/generator: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:02:53.220Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Music/data/doc",
+      "reason": "Failed to convert Module:Music/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Music/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ",
+      "ignored_at": "2026-08-29T16:02:54.912Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:MyCodex",
+      "reason": "Failed to convert Module:MyCodex: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:02:56.597Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Navbox",
+      "reason": "Failed to convert Module:Navbox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:02:58.295Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Navbox/doc",
+      "reason": "Failed to convert Module:Navbox/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Navbox/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]",
+      "ignored_at": "2026-08-29T16:02:59.988Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Navigation",
+      "reason": "Failed to convert Module:Navigation: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:03:01.677Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Navigation/dev",
+      "reason": "Failed to convert Module:Navigation/dev: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:03:03.374Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Navigation/doc",
+      "reason": "Failed to convert Module:Navigation/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Navigation/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ",
+      "ignored_at": "2026-08-29T16:03:05.063Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:NightwaveActs/acts.json",
+      "reason": "Failed to convert Module:NightwaveActs/acts.json: Lua error: Lua error in package.lua at line 80: module 'Module:NightwaveActs/acts.json' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console ",
+      "ignored_at": "2026-08-29T16:03:06.727Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:NightwaveActs/doc",
+      "reason": "Failed to convert Module:NightwaveActs/doc: Lua error: Lua error in package.lua at line 80: module 'Module:NightwaveActs/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:",
+      "ignored_at": "2026-08-29T16:03:08.394Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Placeholder/doc",
+      "reason": "Failed to convert Module:Placeholder/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Placeholder/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8:",
+      "ignored_at": "2026-08-29T16:03:10.071Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Polarity",
+      "reason": "Failed to convert Module:Polarity: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:03:11.758Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Polarity/doc",
+      "reason": "Failed to convert Module:Polarity/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Polarity/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[",
+      "ignored_at": "2026-08-29T16:03:13.456Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Reference",
+      "reason": "Failed to convert Module:Reference: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:03:15.124Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Reference/doc",
+      "reason": "Failed to convert Module:Reference/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Reference/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T16:03:16.812Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:ReleaseStatus",
+      "reason": "Failed to convert Module:ReleaseStatus: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:03:18.500Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:ReleaseStatus/doc",
+      "reason": "Failed to convert Module:ReleaseStatus/doc: Lua error: Lua error in package.lua at line 80: module 'Module:ReleaseStatus/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:",
+      "ignored_at": "2026-08-29T16:03:20.214Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:ReleaseStatus/i18n/doc",
+      "reason": "Failed to convert Module:ReleaseStatus/i18n/doc: Lua error: Lua error in package.lua at line 80: module 'Module:ReleaseStatus/i18n/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console i",
+      "ignored_at": "2026-08-29T16:03:21.886Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:RemoveCategory",
+      "reason": "Failed to convert Module:RemoveCategory: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:03:23.574Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:RemoveCategory/doc",
+      "reason": "Failed to convert Module:RemoveCategory/doc: Lua error: Lua error in package.lua at line 80: module 'Module:RemoveCategory/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input",
+      "ignored_at": "2026-08-29T16:03:25.265Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Research/data/doc",
+      "reason": "Failed to convert Module:Research/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Research/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:",
+      "ignored_at": "2026-08-29T16:03:26.929Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Resources",
+      "reason": "Failed to convert Module:Resources: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:03:28.617Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Resources/data/doc",
+      "reason": "Failed to convert Module:Resources/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Resources/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input",
+      "ignored_at": "2026-08-29T16:03:30.311Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Resources/data/validate",
+      "reason": "Failed to convert Module:Resources/data/validate: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:03:31.980Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Resources/doc",
+      "reason": "Failed to convert Module:Resources/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Resources/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T16:03:33.679Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Resources/infobox",
+      "reason": "Failed to convert Module:Resources/infobox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:03:35.357Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:ScientiaStances",
+      "reason": "Failed to convert Module:ScientiaStances: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:03:37.037Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Shared",
+      "reason": "Failed to convert Module:Shared: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:03:38.788Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Shared/doc",
+      "reason": "Failed to convert Module:Shared/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Shared/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]",
+      "ignored_at": "2026-08-29T16:03:40.496Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Sigils/data/doc",
+      "reason": "Failed to convert Module:Sigils/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Sigils/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8:",
+      "ignored_at": "2026-08-29T16:03:42.195Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:SpxceVendor",
+      "reason": "Failed to convert Module:SpxceVendor: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:03:43.920Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Stances",
+      "reason": "Failed to convert Module:Stances: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:03:45.619Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Stances/data/doc",
+      "reason": "Failed to convert Module:Stances/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Stances/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T16:03:47.342Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Stances/doc",
+      "reason": "Failed to convert Module:Stances/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Stances/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C",
+      "ignored_at": "2026-08-29T16:03:48.988Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:StatObject",
+      "reason": "Failed to convert Module:StatObject: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:03:50.677Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:StatObject/doc",
+      "reason": "Failed to convert Module:StatObject/doc: Lua error: Lua error in package.lua at line 80: module 'Module:StatObject/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ",
+      "ignored_at": "2026-08-29T16:03:52.370Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:String",
+      "reason": "Failed to convert Module:String: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:03:54.034Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:String/doc",
+      "reason": "Failed to convert Module:String/doc: Lua error: Lua error in package.lua at line 80: module 'Module:String/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]",
+      "ignored_at": "2026-08-29T16:03:55.736Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Switch Infobox",
+      "reason": "Failed to convert Module:Switch Infobox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:03:57.427Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Syndicates/data/doc",
+      "reason": "Failed to convert Module:Syndicates/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Syndicates/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console inpu",
+      "ignored_at": "2026-08-29T16:03:59.107Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Table",
+      "reason": "Failed to convert Module:Table: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:04:00.797Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Table/doc",
+      "reason": "Failed to convert Module:Table/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Table/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]:",
+      "ignored_at": "2026-08-29T16:04:02.493Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Tabs",
+      "reason": "Failed to convert Module:Tabs: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:04:04.199Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Tabs/doc",
+      "reason": "Failed to convert Module:Tabs/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Tabs/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]: ",
+      "ignored_at": "2026-08-29T16:04:05.888Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:TennoGen",
+      "reason": "Failed to convert Module:TennoGen: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:04:07.561Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:TennoGen/data/doc",
+      "reason": "Failed to convert Module:TennoGen/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:TennoGen/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:",
+      "ignored_at": "2026-08-29T16:04:09.262Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:TennoGen/doc",
+      "reason": "Failed to convert Module:TennoGen/doc: Lua error: Lua error in package.lua at line 80: module 'Module:TennoGen/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[",
+      "ignored_at": "2026-08-29T16:04:10.956Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:TennoScript",
+      "reason": "Failed to convert Module:TennoScript: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:04:12.652Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Text",
+      "reason": "Failed to convert Module:Text: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:04:14.357Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Text/doc",
+      "reason": "Failed to convert Module:Text/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Text/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]: ",
+      "ignored_at": "2026-08-29T16:04:16.061Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:TextIcons",
+      "reason": "Failed to convert Module:TextIcons: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:04:17.774Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:TextIcons/data/doc",
+      "reason": "Failed to convert Module:TextIcons/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:TextIcons/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input",
+      "ignored_at": "2026-08-29T16:04:19.433Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:TextIcons/doc",
+      "reason": "Failed to convert Module:TextIcons/doc: Lua error: Lua error in package.lua at line 80: module 'Module:TextIcons/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T16:04:21.121Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Tooltips",
+      "reason": "Failed to convert Module:Tooltips: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:04:22.816Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Tooltips/data",
+      "reason": "Failed to convert Module:Tooltips/data: Lua error: Lua error in Module:Tooltips/data at line 23: attempt to call a table value.Backtrace:Module:Tooltips/data:23: in function \"init\"package.lua:103: in function \"require\"console input:8: ?[C]: ?",
+      "ignored_at": "2026-08-29T16:04:24.513Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Tooltips/data/Mods",
+      "reason": "Failed to convert Module:Tooltips/data/Mods: Lua error: Lua error in Module:Tooltips/icon at line 46: bad argument #1 to 'format' (string expected, got nil).Backtrace:[C]: in function \"format\"Module:Tooltips/icon:46: in function \"icon\"Module:Tooltips/icon:",
+      "ignored_at": "2026-08-29T16:04:26.208Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Tooltips/data/Weapons",
+      "reason": "Failed to convert Module:Tooltips/data/Weapons: Lua error: Lua error in Module:Tooltips/icon at line 216: data for mw.loadData contains a table with a metatable.Backtrace:[C]: in function \"error\"mw.lua:878: in function \"loadData\"Module:Tooltips/icon:216: ?(ta",
+      "ignored_at": "2026-08-29T16:04:27.914Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Tooltips/dev",
+      "reason": "Failed to convert Module:Tooltips/dev: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:04:29.608Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Tooltips/doc",
+      "reason": "Failed to convert Module:Tooltips/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Tooltips/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[",
+      "ignored_at": "2026-08-29T16:04:31.315Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Tooltips/icon",
+      "reason": "Failed to convert Module:Tooltips/icon: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:04:33.059Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Tooltips/icon/dev",
+      "reason": "Failed to convert Module:Tooltips/icon/dev: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:04:34.754Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Tooltips/icon/doc",
+      "reason": "Failed to convert Module:Tooltips/icon/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Tooltips/icon/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:",
+      "ignored_at": "2026-08-29T16:04:36.435Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Tooltips/tip",
+      "reason": "Failed to convert Module:Tooltips/tip: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:04:38.150Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Tooltips/tip/dev",
+      "reason": "Failed to convert Module:Tooltips/tip/dev: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:04:39.891Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Tooltips/tip/doc",
+      "reason": "Failed to convert Module:Tooltips/tip/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Tooltips/tip/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T16:04:41.593Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:TrajosAcquisition",
+      "reason": "Failed to convert Module:TrajosAcquisition: Lua error: Lua error in package.lua at line 80: module 'Dev:Entrypoint' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"Module:TrajosAcquisition",
+      "ignored_at": "2026-08-29T16:04:43.295Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:TrajosVoid",
+      "reason": "Failed to convert Module:TrajosVoid: Lua error: Lua error in Module:TrajosVoid at line 49: data for mw.loadData contains a table with a metatable.Backtrace:[C]: in function \"error\"mw.lua:878: in function \"loadData\"Module:TrajosVoid:49: in function ",
+      "ignored_at": "2026-08-29T16:04:44.967Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:TranslationExamples",
+      "reason": "Failed to convert Module:TranslationExamples: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:04:46.629Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Unicode data",
+      "reason": "Failed to convert Module:Unicode data: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:04:48.347Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Unindent",
+      "reason": "Failed to convert Module:Unindent: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"console input:9: ?[C]: ?",
+      "ignored_at": "2026-08-29T16:04:50.079Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Unindent/doc",
+      "reason": "Failed to convert Module:Unindent/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Unindent/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[",
+      "ignored_at": "2026-08-29T16:04:51.786Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Upgrades/data/doc",
+      "reason": "Failed to convert Module:Upgrades/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Upgrades/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:",
+      "ignored_at": "2026-08-29T16:04:53.483Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:UserError",
+      "reason": "Failed to convert Module:UserError: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"console input:9: ?[C]: ?",
+      "ignored_at": "2026-08-29T16:04:55.137Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:UserError/doc",
+      "reason": "Failed to convert Module:UserError/doc: Lua error: Lua error in package.lua at line 80: module 'Module:UserError/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T16:04:56.788Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Vehicles/data/doc",
+      "reason": "Failed to convert Module:Vehicles/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Vehicles/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:",
+      "ignored_at": "2026-08-29T16:04:58.504Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Vehicles/infobox",
+      "reason": "Failed to convert Module:Vehicles/infobox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:05:00.162Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Vehicles/infobox/doc",
+      "reason": "Failed to convert Module:Vehicles/infobox/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Vehicles/infobox/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console inp",
+      "ignored_at": "2026-08-29T16:05:01.818Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Vendors",
+      "reason": "Failed to convert Module:Vendors: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:05:03.458Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Vendors/data/doc",
+      "reason": "Failed to convert Module:Vendors/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Vendors/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T16:05:05.167Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Vendors/doc",
+      "reason": "Failed to convert Module:Vendors/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Vendors/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C",
+      "ignored_at": "2026-08-29T16:05:06.863Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Version",
+      "reason": "Failed to convert Module:Version: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:05:08.560Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Version/data/doc",
+      "reason": "Failed to convert Module:Version/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Version/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T16:05:10.251Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Version/doc",
+      "reason": "Failed to convert Module:Version/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Version/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C",
+      "ignored_at": "2026-08-29T16:05:11.924Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:VideoGallery",
+      "reason": "Failed to convert Module:VideoGallery: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:05:13.590Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Void",
+      "reason": "Failed to convert Module:Void: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:05:15.282Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Void/data/doc",
+      "reason": "Failed to convert Module:Void/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Void/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T16:05:16.972Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Void/dev/doc",
+      "reason": "Failed to convert Module:Void/dev/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Void/dev/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[",
+      "ignored_at": "2026-08-29T16:05:18.659Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Void/doc",
+      "reason": "Failed to convert Module:Void/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Void/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]: ",
+      "ignored_at": "2026-08-29T16:05:20.350Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Void/page",
+      "reason": "Failed to convert Module:Void/page: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:05:22.040Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Void/page/doc",
+      "reason": "Failed to convert Module:Void/page/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Void/page/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T16:05:23.744Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:VoidByReward",
+      "reason": "Failed to convert Module:VoidByReward: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:05:25.435Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:VoidByReward/doc",
+      "reason": "Failed to convert Module:VoidByReward/doc: Lua error: Lua error in package.lua at line 80: module 'Module:VoidByReward/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T16:05:27.127Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:WDSButton",
+      "reason": "Failed to convert Module:WDSButton: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:05:28.813Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:WDSButton/doc",
+      "reason": "Failed to convert Module:WDSButton/doc: Lua error: Lua error in package.lua at line 80: module 'Module:WDSButton/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T16:05:30.503Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:WarframeUsageData2020/data/doc",
+      "reason": "Failed to convert Module:WarframeUsageData2020/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:WarframeUsageData2020/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"c",
+      "ignored_at": "2026-08-29T16:05:32.192Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Warframes",
+      "reason": "Failed to convert Module:Warframes: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:05:33.854Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Warframes/Conclave/data/doc",
+      "reason": "Failed to convert Module:Warframes/Conclave/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Warframes/Conclave/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"cons",
+      "ignored_at": "2026-08-29T16:05:35.526Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Warframes/data/doc",
+      "reason": "Failed to convert Module:Warframes/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Warframes/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input",
+      "ignored_at": "2026-08-29T16:05:37.216Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Warframes/doc",
+      "reason": "Failed to convert Module:Warframes/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Warframes/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-08-29T16:05:38.891Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Warframes/infobox",
+      "reason": "Failed to convert Module:Warframes/infobox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:05:40.564Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons",
+      "reason": "Failed to convert Module:Weapons: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:05:42.251Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/Conclave/data/doc",
+      "reason": "Failed to convert Module:Weapons/Conclave/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/Conclave/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"consol",
+      "ignored_at": "2026-08-29T16:05:43.944Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/Conclave/data/melee/doc",
+      "reason": "Failed to convert Module:Weapons/Conclave/data/melee/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/Conclave/data/melee/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"",
+      "ignored_at": "2026-08-29T16:05:45.632Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/Conclave/data/primary/doc",
+      "reason": "Failed to convert Module:Weapons/Conclave/data/primary/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/Conclave/data/primary/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"requir",
+      "ignored_at": "2026-08-29T16:05:47.316Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/Conclave/data/secondary/doc",
+      "reason": "Failed to convert Module:Weapons/Conclave/data/secondary/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/Conclave/data/secondary/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"requ",
+      "ignored_at": "2026-08-29T16:05:49.002Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/characteristics",
+      "reason": "Failed to convert Module:Weapons/characteristics: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:05:50.691Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/characteristics/doc",
+      "reason": "Failed to convert Module:Weapons/characteristics/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/characteristics/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"cons",
+      "ignored_at": "2026-08-29T16:05:52.379Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/compare",
+      "reason": "Failed to convert Module:Weapons/compare: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:05:54.031Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/compare/doc",
+      "reason": "Failed to convert Module:Weapons/compare/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/compare/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console inpu",
+      "ignored_at": "2026-08-29T16:05:55.724Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/comptable",
+      "reason": "Failed to convert Module:Weapons/comptable: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:05:57.404Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/comptable/doc",
+      "reason": "Failed to convert Module:Weapons/comptable/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/comptable/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console in",
+      "ignored_at": "2026-08-29T16:05:59.095Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/csv",
+      "reason": "Failed to convert Module:Weapons/csv: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:06:00.778Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/csv/doc",
+      "reason": "Failed to convert Module:Weapons/csv/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/csv/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8:",
+      "ignored_at": "2026-08-29T16:06:02.470Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data",
+      "reason": "Failed to convert Module:Weapons/data: JSON parse error: Unexpected token 'i', ...\"FireRate\":inf, \"Mult\"... is not valid JSON\nOutput: {\"Tenet Tetra\":{\"Link\":\"Tenet Tetra\", \"Conclave\":false, \"_TooltipAttackDisplay\":1, \"Class\":\"Rifle\", \"MaxRank\":40, \"Traits\":[\"Corpus\", \"Tenet\"], \"Tradable\":3, \"GripType\":\"\", \"Slot\":\"Primary\", \"Introduc",
+      "ignored_at": "2026-08-29T16:06:05.575Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/archwing",
+      "reason": "Failed to convert Module:Weapons/data/archwing: JSON parse error: Unexpected token 'i', ...\"hThrough\":inf, \"Stat\"... is not valid JSON\nOutput: {\"Centaur\":{\"Conclave\":false, \"_TooltipAttackDisplay\":1, \"Class\":\"Archmelee\", \"MaxRank\":30, \"GripType\":\"MELEE_ONE_HAND\", \"Introduced\":\"15.7.2\", \"Polarities\":[\"Madurai\"], \"InternalName\":\"\\/Lotus\\/Weapo",
+      "ignored_at": "2026-08-29T16:06:08.280Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/archwing/doc",
+      "reason": "Failed to convert Module:Weapons/data/archwing/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/data/archwing/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"consol",
+      "ignored_at": "2026-08-29T16:06:09.969Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/companion",
+      "reason": "Failed to convert Module:Weapons/data/companion: JSON parse error: Unexpected token 'i', ...\"\"AmmoMax\":inf, \"Disp\"... is not valid JSON\nOutput: {\"Sunika Claws\":{\"Conclave\":false, \"_TooltipAttackDisplay\":1, \"Class\":\"Claws (Beast)\", \"MaxRank\":30, \"Image\":\"BeastClaws.png\", \"_IgnoreInMasteryCount\":true, \"Introduced\":\"37\", \"InternalName\":\"\\/Lotus\\",
+      "ignored_at": "2026-08-29T16:06:12.678Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/companion/doc",
+      "reason": "Failed to convert Module:Weapons/data/companion/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/data/companion/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"conso",
+      "ignored_at": "2026-08-29T16:06:14.364Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/credits/doc",
+      "reason": "Failed to convert Module:Weapons/data/credits/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/data/credits/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console",
+      "ignored_at": "2026-08-29T16:06:16.034Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/dev",
+      "reason": "Failed to convert Module:Weapons/data/dev: JSON parse error: Unexpected token 'i', ...\"\"MaxAmmo\":inf, \"Imag\"... is not valid JSON\nOutput: {\"Weapons\":{\"Pupacyst\":{\"HeavySlamAttack\":1420, \"Conclave\":true, \"_TooltipAttackDisplay\":1, \"Class\":\"Polearm\", \"HeavyAttack\":1704, \"HeavyRadialDmg\":1420, \"Image\":\"Pupacyst.png\", \"BlockAngle\":55, \"Intr",
+      "ignored_at": "2026-08-29T16:06:18.773Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/doc",
+      "reason": "Failed to convert Module:Weapons/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8",
+      "ignored_at": "2026-08-29T16:06:20.459Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/melee/doc",
+      "reason": "Failed to convert Module:Weapons/data/melee/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/data/melee/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console i",
+      "ignored_at": "2026-08-29T16:06:22.145Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/misc",
+      "reason": "Failed to convert Module:Weapons/data/misc: JSON parse error: Unexpected token 'i', ...\"\"AmmoMax\":inf, \"Slot\"... is not valid JSON\nOutput: {\"Lob Blobs\":{\"_TooltipAttackDisplay\":1, \"Conclave\":false, \"Trigger\":\"Semi-Auto\", \"Class\":\"Unique\", \"_IgnoreInMasteryCount\":true, \"Reload\":0, \"Attacks\":[{\"CritChance\":0.15, \"FireRate\":2, \"Multishot\":1",
+      "ignored_at": "2026-08-29T16:06:24.851Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/misc/doc",
+      "reason": "Failed to convert Module:Weapons/data/misc/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/data/misc/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console in",
+      "ignored_at": "2026-08-29T16:06:26.551Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/modular/doc",
+      "reason": "Failed to convert Module:Weapons/data/modular/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/data/modular/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console",
+      "ignored_at": "2026-08-29T16:06:28.238Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/primary",
+      "reason": "Failed to convert Module:Weapons/data/primary: JSON parse error: Unexpected token 'i', ...\"FireRate\":inf, \"Mult\"... is not valid JSON\nOutput: {\"Tenet Tetra\":{\"Link\":\"Tenet Tetra\", \"Conclave\":false, \"_TooltipAttackDisplay\":1, \"Class\":\"Rifle\", \"MaxRank\":40, \"Traits\":[\"Corpus\", \"Tenet\"], \"Tradable\":3, \"GripType\":\"\", \"Slot\":\"Primary\", \"Introduc",
+      "ignored_at": "2026-08-29T16:06:31.004Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/primary/doc",
+      "reason": "Failed to convert Module:Weapons/data/primary/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/data/primary/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console",
+      "ignored_at": "2026-08-29T16:06:32.702Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/railjack",
+      "reason": "Failed to convert Module:Weapons/data/railjack: JSON parse error: Unexpected token 'i', ...\"\"AmmoMax\":inf, \"Atta\"... is not valid JSON\nOutput: {\"Vidar Apoc Mk IV\":{\"ReloadRate\":500, \"Conclave\":false, \"_TooltipAttackDisplay\":1, \"Class\":\"Turret\", \"Image\":\"TurretApoc.png\", \"_IgnoreInMasteryCount\":true, \"Introduced\":\"43.0.5\", \"InternalName\":\"\\/L",
+      "ignored_at": "2026-08-29T16:06:35.419Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/railjack/doc",
+      "reason": "Failed to convert Module:Weapons/data/railjack/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/data/railjack/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"consol",
+      "ignored_at": "2026-08-29T16:06:37.124Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/secondary/doc",
+      "reason": "Failed to convert Module:Weapons/data/secondary/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/data/secondary/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"conso",
+      "ignored_at": "2026-08-29T16:06:38.806Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/validate",
+      "reason": "Failed to convert Module:Weapons/data/validate: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:06:40.511Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/data/validate/doc",
+      "reason": "Failed to convert Module:Weapons/data/validate/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/data/validate/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"consol",
+      "ignored_at": "2026-08-29T16:06:42.186Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/dev",
+      "reason": "Failed to convert Module:Weapons/dev: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:06:43.885Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/dev/doc",
+      "reason": "Failed to convert Module:Weapons/dev/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/dev/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8:",
+      "ignored_at": "2026-08-29T16:06:45.597Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/doc",
+      "reason": "Failed to convert Module:Weapons/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C",
+      "ignored_at": "2026-08-29T16:06:47.292Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/infobox",
+      "reason": "Failed to convert Module:Weapons/infobox: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:06:48.949Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/infobox/doc",
+      "reason": "Failed to convert Module:Weapons/infobox/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/infobox/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console inpu",
+      "ignored_at": "2026-08-29T16:06:50.658Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/nav",
+      "reason": "Failed to convert Module:Weapons/nav: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:06:52.353Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/nav/doc",
+      "reason": "Failed to convert Module:Weapons/nav/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/nav/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8:",
+      "ignored_at": "2026-08-29T16:06:54.066Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/ppdata/doc",
+      "reason": "Failed to convert Module:Weapons/ppdata/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/ppdata/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input",
+      "ignored_at": "2026-08-29T16:06:55.781Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/ppdata/seeder",
+      "reason": "Failed to convert Module:Weapons/ppdata/seeder: Lua error: Lua error in Module:Weapons/ppdata/seeder at line 4: data for mw.loadData contains a table with a metatable.Backtrace:[C]: in function \"error\"mw.lua:878: in function \"loadData\"Module:Weapons/ppdata/se",
+      "ignored_at": "2026-08-29T16:06:57.483Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/ppdata/seeder/doc",
+      "reason": "Failed to convert Module:Weapons/ppdata/seeder/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/ppdata/seeder/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"consol",
+      "ignored_at": "2026-08-29T16:06:59.183Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/preprocess",
+      "reason": "Failed to convert Module:Weapons/preprocess: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:07:00.893Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Weapons/preprocess/doc",
+      "reason": "Failed to convert Module:Weapons/preprocess/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Weapons/preprocess/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console i",
+      "ignored_at": "2026-08-29T16:07:02.604Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:WorldState",
+      "reason": "Failed to convert Module:WorldState: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-08-29T16:07:04.305Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Worldstate/data-flai",
+      "reason": "Failed to convert Module:Worldstate/data-flai: Lua error: Lua error: unexpected symbol near '[[{\"Time\":1565025776}]]'.Backtrace:[C]: in function \"loadPackage\"mw.lua:43: in function \"loader\"package.lua:75: in function \"load\"package.lua:99: in function \"requir",
+      "ignored_at": "2026-08-29T16:07:05.961Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Yesno",
+      "reason": "Failed to convert Module:Yesno: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"console input:9: ?[C]: ?",
+      "ignored_at": "2026-08-29T16:07:07.632Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Yesno/doc",
+      "reason": "Failed to convert Module:Yesno/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Yesno/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]:",
+      "ignored_at": "2026-08-29T16:07:09.285Z",
+      "attempt_count": 1
+    }
+  ]
+}
