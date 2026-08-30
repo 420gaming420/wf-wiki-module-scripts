@@ -135,9 +135,13 @@ run_request_py() {
     log_info "Starting request.py..."
     REQUEST_START_TIME=$(date +%s)
     
-    # Run request.py and capture output (tee for live visibility)
+    # Run request.py and capture output (tee for live visibility if TTY available)
     local output
-    output=$(python3 request.py 2>&1 | tee /dev/tty) || {
+    if [ -t 1 ]; then
+        output=$(python3 request.py 2>&1 | tee /dev/tty)
+    else
+        output=$(python3 request.py 2>&1)
+    fi || {
         local exit_code=$?
         log_error "request.py failed with exit code $exit_code"
         log_error "Output:"
@@ -188,9 +192,13 @@ run_convert_module_js() {
     
     log_info "Converting $module_count modules..."
     
-    # Run convert_module.js (tee for live visibility)
+    # Run convert_module.js (tee for live visibility if TTY available)
     local output
-    output=$(node convert_module.js --batch --pages "$STALE_MODULES" 2>&1 | tee /dev/tty) || {
+    if [ -t 1 ]; then
+        output=$(node convert_module.js --batch --pages "$STALE_MODULES" 2>&1 | tee /dev/tty)
+    else
+        output=$(node convert_module.js --batch --pages "$STALE_MODULES" 2>&1)
+    fi || {
         local exit_code=$?
         log_error "convert_module.js failed with exit code $exit_code"
         log_error "Output:"
