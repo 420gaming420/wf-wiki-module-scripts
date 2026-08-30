@@ -393,7 +393,7 @@ def filter_stale_modules(
                     pass
             
             # Check if timestamp matches
-            local_ts = local_meta.get('timestamp')
+            local_ts = local_meta.get('wiki_timestamp')
             if local_ts == wiki_ts:
                 # Local copy is current, skip
                 continue
@@ -484,7 +484,7 @@ def main():
     
     rate_limiter = RateLimiter(min_interval=rate_limit)
     
-    # --check-metafiles mode: skip all API calls, only check metadata files
+    # --check-metafiles mode: skip all API calls, use existing filter_stale_modules logic
     if args.check_metafiles:
         print(f"\n{'=' * 60}")
         print("CHECK-METAFILES MODE (dry run - no API calls)")
@@ -500,6 +500,42 @@ def main():
         metadata = load_metadata(metadata_dir)
         print(f"  Found {len(metadata)} metadata files")
         
+        # Load stale modules from file (no API call)
+        print(f"\nLoading stale modules from {stale_modules_path}...")
+        stale_modules = []
+        if stale_modules_path.exists():
+            with open(stale_modules_path, 'r', encoding='utf-8') as f:
+                stale_modules = json.load(f)
+            print(f"  Found {len(stale_modules)} stale modules")
+        else:
+            print(f"  Warning: {stale_modules_path} not found")
+        
+        # Build timestamps dict from stale_modules (no API call)
+        timestamps = {}
+        for mod in stale_modules:
+            page = mod.get('page')
+            wiki_ts = mod.get('wiki_timestamp')
+            if page and wiki_ts:
+                timestamps[page] = {
+                    'title': page,
+                    'pageid': mod.get('pageid'),
+                    'revid': None,
+                    'timestamp': wiki_ts
+                }
+        
+        # Use existing filter_stale_modules logic (no API calls)
+        print(f"\nFiltering modules (staleness threshold: {staleness_hours} hours)...")
+        stale_list = filter_stale_modules(stale_modules, timestamps, metadata, ignore_list, staleness_hours)
+        
+        print(f"\n{'=' * 60}")
+        print(f"SUMMARY: {len(stale_list)} stale, {len(stale_modules) - len(stale_list)} current out of {len(stale_modules)} modules")
+        print(f"{'=' * 60}")
+        
+        if stale_list:
+            print(f"\nStale modules:")
+            for mod in stale_list:
+                print(f"  - {mod['page']} ({mod['reason']})")
+        
         print(f"\nConfig values:")
         print(f"  metadata_dir: {metadata_dir}")
         print(f"  resolved: {metadata_dir.resolve()}")
@@ -513,14 +549,6 @@ def main():
                 print(f"     {json.dumps(data, indent=2)}")
         else:
             print("\n  No metadata files found!")
-            print(f"\n  Trying alternative paths:")
-            alt_paths = [
-                Path('/tmp/scripts/data/json'),
-                Path('/home/runner/work/wf-wiki-module-data/wf-wiki-module-data/json'),
-                Path('json'),
-            ]
-            for alt in alt_paths:
-                print(f"    {alt} -> exists: {alt.exists()}, files: {len(list(alt.glob('*.meta.json')) if alt.exists() else 0)}")
         
         print(f"\n{'=' * 60}")
         print("CHECK-METAFILES COMPLETE")
