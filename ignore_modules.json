@@ -2021,6 +2021,12 @@
       "reason": "Failed to convert Module:Yesno/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Yesno/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]:",
       "ignored_at": "2026-08-29T16:07:09.285Z",
       "attempt_count": 1
+    },
+    {
+      "module": "Module:Maximization/doc",
+      "reason": "Failed to convert Module:Maximization/doc: Waiting for selector `.mw-scribunto-print` failed",
+      "ignored_at": "2026-08-30T19:38:16.354Z",
+      "attempt_count": 1
     }
   ]
 }
