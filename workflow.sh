@@ -265,11 +265,31 @@ main() {
     done
     
     WORKFLOW_START_TIME=$(date +%s)
-    
+
     log_info "=================================="
     log_info "WARFRAME Wiki Module Sync Workflow"
     log_info "=================================="
     log_info "Start time: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+    log_info "SCRIPT_DIR: $SCRIPT_DIR"
+    log_info "PWD: $(pwd)"
+    log_info ""
+    log_info "Directories:"
+    log_info "  DATA_DIR: $DATA_DIR"
+    log_info "  LOG_DIR: $LOG_DIR"
+    log_info "  CONFIG_FILE: $CONFIG_FILE"
+    log_info "  STALE_MODULES: $STALE_MODULES"
+    log_info "  IGNORE_MODULES: $IGNORE_MODULES"
+    log_info "  CONSECUTIVE_ERRORS_FILE: $CONSECUTIVE_ERRORS_FILE"
+    log_info "  DISABLE_FILE: $DISABLE_FILE"
+    log_info ""
+    if [ -f "$CONFIG_FILE" ]; then
+        log_info "Config file contents ($CONFIG_FILE):"
+        while IFS= read -r line; do
+            log_info "  $line"
+        done < "$CONFIG_FILE"
+    else
+        log_warn "Config file $CONFIG_FILE not found"
+    fi
     log_info ""
     
     # Check if GitHub Action is disabled
