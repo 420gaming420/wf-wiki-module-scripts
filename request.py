@@ -468,10 +468,7 @@ def main():
         if 'test' in m['title'].lower() or 'sandbox' in m['title'].lower()
     ]
     if test_sand_modules:
-        excluded_titles = sorted(m['title'] for m in test_sand_modules)
-        print(f"\nExcluding {len(test_sand_modules)} test/sandbox modules:")
-        for title in excluded_titles:
-            print(f"  - {title}")
+        print(f"\nExcluding {len(test_sand_modules)} test/sandbox modules")
         modules_to_check = [m for m in modules_to_check if m not in test_sand_modules]
     
     # Phase 3: Get timestamps
