@@ -2,8 +2,8 @@
 """
 extract_lua.py — Extract Lua source code from downloaded HTML files.
 
-Reads HTML files from data/html/, extracts Lua code blocks,
-and saves them to data/lua/ with corresponding metadata.
+Reads HTML files from data/html/, extracts all Lua code blocks (including
+examples and schemas), and saves them as <name>_N.lua with corresponding metadata.
 
 Usage:
     python extract_lua.py [--config CONFIG] [--force]
@@ -198,36 +198,44 @@ def main():
             error_count += 1
             continue
 
-        # Extract Lua and comments
-        lua_code, comments = lua_extractor.extract_all(html_content)
+        # Extract all Lua blocks and combined comments
+        blocks, comments = lua_extractor.extract_all(html_content)
 
-        if not lua_code:
+        if not blocks:
             print(f"  Warning: No Lua code found in {html_path}")
             error_count += 1
             continue
 
-        # Save Lua file
-        lua_path = config["lua_dir"] / f"{safe_name}.lua"
-        try:
-            with open(lua_path, "w", encoding="utf-8") as f:
-                f.write(lua_code)
-        except OSError as e:
-            print(f"  Error: Failed to save {lua_path}: {e}")
-            error_count += 1
-            continue
+        # Save each block as a separate file: <safe_name>_N.lua
+        lua_files = []
+        total_bytes = 0
+        for block_idx, block_code in enumerate(blocks):
+            lua_filename = f"{safe_name}_{block_idx}.lua"
+            lua_path = config["lua_dir"] / lua_filename
+            try:
+                with open(lua_path, "w", encoding="utf-8") as f:
+                    f.write(block_code)
+                total_bytes += len(block_code)
+                lua_files.append(lua_filename)
+            except OSError as e:
+                print(f"  Error: Failed to save {lua_path}: {e}")
+                error_count += 1
+                continue
 
         # Save metadata
         metadata = {
             "page": module_name,
             "wiki_timestamp": html_meta.get("wiki_timestamp") if html_meta else None,
             "extracted_at": datetime.now(timezone.utc).isoformat(),
-            "file_size": len(lua_code),
+            "lua_files": lua_files,
+            "lua_block_count": len(blocks),
+            "file_size": total_bytes,
             "comment_count": len(comments.splitlines()) if comments else 0,
             "status": "success"
         }
         save_lua_meta(config["lua_dir"], module_name, metadata)
 
-        print(f"  Success! Saved to {lua_path} ({len(lua_code)} bytes, {len(comments.splitlines()) if comments else 0} comments)")
+        print(f"  Success! Saved {len(blocks)} block(s) to {config['lua_dir']} ({total_bytes} bytes, {len(comments.splitlines()) if comments else 0} comments)")
         success_count += 1
 
     # Summary

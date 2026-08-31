@@ -67,15 +67,16 @@ python3 download.py --page "Module:Arcane/infobox"
 
 ### `extract_lua.py` — Lua Source Extractor
 
-Extracts Lua source code from downloaded HTML files to `data/lua/`.
+Extracts all Lua code blocks from downloaded HTML files to `data/lua/`.
 
 ```bash
 python3 extract_lua.py [--config config.ini] [--force]
 ```
 
 - Reads HTML files from `data/html/`
-- Extracts Lua code blocks from `<pre>` tags
-- Saves to `data/lua/` with corresponding metadata
+- Extracts **all** `<pre>` blocks (including examples, schemas, and documentation code)
+- Saves each block as a separate file: `<ModuleName>_N.lua` (e.g. `Module-Ability-data_0.lua`, `_1.lua`)
+- Saves metadata to `<ModuleName>.meta.json` with `lua_files` listing all block filenames and `lua_block_count`
 - Respects `staleness_hours` to avoid redundant extraction
 
 **Options:**

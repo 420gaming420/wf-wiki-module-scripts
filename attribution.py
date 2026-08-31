@@ -233,23 +233,24 @@ def process_file(
     # Build new attribution
     new_attribution = build_attribution(module_name, base_url, converter_repo, converted_at)
 
-    # Extract comments from local Lua file (skip in dry-run mode)
+    # Extract comments from local Lua files (skip in dry-run mode)
     source_url = new_attribution["source_url"]
     comment_text = ""
     if not dry_run:
         lua_dir = get_lua_dir(config)
         safe_name = module_name.replace(":", "-").replace("/", "-")
-        lua_path = lua_dir / f"{safe_name}.lua"
-        if lua_path.exists():
+        lua_files = sorted(lua_dir.glob(f"{safe_name}_*.lua"))
+        if lua_files:
             try:
-                with open(lua_path, "r", encoding="utf-8") as f:
-                    lua_code = f.read()
-                comment_text = lua_extractor.extract_comments(lua_code)
+                combined = "\n\n".join(
+                    (lua_dir / f).read_text(encoding="utf-8") for f in lua_files
+                )
+                comment_text = lua_extractor.extract_comments(combined)
             except OSError as e:
                 if verbose:
-                    print(f"  Warning: Failed to read {lua_path}: {e}", file=sys.stderr)
+                    print(f"  Warning: Failed to read lua files for {safe_name}: {e}", file=sys.stderr)
         elif verbose:
-            print(f"  Warning: Lua file not found: {lua_path}", file=sys.stderr)
+            print(f"  Warning: No lua files found for {safe_name} (expected <name>_N.lua)", file=sys.stderr)
 
     # Always update _attribution and _comments — never skip
     if "_attribution" in data:

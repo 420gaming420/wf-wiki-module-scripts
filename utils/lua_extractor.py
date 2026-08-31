@@ -2,35 +2,34 @@
 """
 Lua Extractor - Extract Lua code and comments from wiki HTML pages.
 
-Provides functions to parse HTML and extract Lua source code blocks,
-then parse comments from the Lua source.
+Provides functions to parse HTML and extract all Lua source code blocks
+(including examples and schemas), then parse comments from the combined Lua source.
 """
 
 import re
 
 
-def extract_lua_from_html(html: str) -> str | None:
+def extract_lua_blocks(html: str) -> list[str]:
     """
-    Extract the main Lua code block from a wiki HTML page.
+    Extract all Lua code blocks from a wiki HTML page.
 
-    Picks the largest <pre> block that contains 'local ' or 'return '.
+    Finds every <pre> block in the HTML, cleans HTML entities,
+    and returns them in document order (first block is index 0).
 
     Args:
         html: Raw HTML string
 
     Returns:
-        Cleaned Lua source code, or None if no code found
+        List of cleaned Lua source code strings, one per <pre> block
     """
     pre_blocks = re.findall(r"<pre[^>]*>(.*?)</pre>", html, re.DOTALL)
-    best = None
+    blocks = []
     for block in pre_blocks:
         clean = re.sub(r"<[^>]+>", "", block)
         clean = clean.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
         clean = clean.replace("&quot;", '"').replace("&#39;", "'")
-        if "local " in clean or "return " in clean:
-            if best is None or len(clean) > len(best):
-                best = clean
-    return best
+        blocks.append(clean)
+    return blocks
 
 
 def extract_comments(lua_code: str) -> str:
@@ -96,16 +95,21 @@ def extract_comments(lua_code: str) -> str:
     return "\n".join(unique)
 
 
-def extract_all(html: str) -> tuple[str | None, str]:
+def extract_all(html: str) -> tuple[list[str], str]:
     """
-    Extract both Lua code and comments from HTML in one pass.
+    Extract all Lua code blocks and comments from HTML in one pass.
+
+    Concatenates all blocks with double-newline separators for comment
+    extraction, then returns both the individual blocks and the combined
+    comment text.
 
     Args:
         html: Raw HTML string
 
     Returns:
-        Tuple of (lua_code or None, comments string)
+        Tuple of (list of lua code blocks, combined comments string)
     """
-    lua_code = extract_lua_from_html(html)
-    comments = extract_comments(lua_code) if lua_code else ""
-    return lua_code, comments
+    blocks = extract_lua_blocks(html)
+    combined = "\n\n".join(blocks) if blocks else ""
+    comments = extract_comments(combined) if combined else ""
+    return blocks, comments
