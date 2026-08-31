@@ -26,6 +26,7 @@ Queries the WARFRAME Wiki API to find modules that have been modified since the 
 python3 request.py [--config config.ini]
 ```
 
+- Fetches the full module catalog from the wiki API on every run
 - Fetches page timestamps in batch via the MediaWiki API
 - Compares against local `.meta.json` files
 - Outputs `stale_modules.json` with modules that need updating
@@ -34,19 +35,18 @@ python3 request.py [--config config.ini]
 | Flag | Description |
 |---|---|
 | `--config CONFIG` | Path to config.ini (default: `config.ini`) |
-| `--force-collect` | Force re-fetch the full module catalog from the wiki API (overwrites any cached `all_wfwiki_modules_merged.json`) |
 
 ---
 
 ### `download.py` — HTML Archive Downloader
 
-Downloads HTML pages for all wiki modules (excluding test/sandbox) to `data/html/`.
+Downloads HTML pages for all wiki modules (excluding sandbox) to `data/html/`.
 
 ```bash
 python3 download.py [--config config.ini] [--force] [--page NAME]
 ```
 
-- Downloads ~515 actual modules (filters out test/sandbox)
+- Downloads ~515 actual modules (filters out sandbox)
 - Respects `staleness_hours` to avoid redundant downloads
 - Skips modules with matching wiki timestamps
 - **Does NOT** use `ignore_modules.json` (archives everything)

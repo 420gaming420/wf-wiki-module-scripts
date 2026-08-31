@@ -2,7 +2,7 @@
 """
 download.py — Download WARFRAME Wiki module HTML pages for archival.
 
-Downloads HTML files for all actual modules (excluding test/sandbox),
+Downloads HTML files for all actual modules (excluding sandbox),
 storing them in data/html/ with corresponding metadata.
 
 Uses cached data from request.py (all_wfwiki_modules_merged.json and all_timestamps.json).
@@ -86,17 +86,17 @@ def _parse_float(config, section: str, key: str, default: float) -> float:
 
 def filter_modules(modules: list) -> list:
     """
-    Filter out test and sandbox modules.
+    Filter out sandbox modules.
 
     Args:
         modules: List of module dicts from wiki API
 
     Returns:
-        Filtered list excluding test/sandbox modules
+        Filtered list excluding sandbox modules
     """
     return [
         m for m in modules
-        if "test" not in m["title"].lower() and "sandbox" not in m["title"].lower()
+        if "sandbox" not in m["title"].lower()
     ]
 
 
@@ -248,7 +248,7 @@ def main():
 
     start_time = time.time()
 
-    # Filter out test/sandbox
+    # Filter out sandbox
     modules = filter_modules(modules)
     print(f"Total modules to process (after filtering): {len(modules)}")
 

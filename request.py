@@ -415,7 +415,6 @@ def main():
     """Main entry point."""
     parser = argparse.ArgumentParser(description='Query WARFRAME Wiki API for stale modules')
     parser.add_argument('--config', type=Path, default=Path('config.ini'), help='Path to config file')
-    parser.add_argument('--force-collect', action='store_true', help='Force re-collection of module catalog')
     parser.add_argument('--check-metafiles', action='store_true', help='Check metadata files without API calls (dry run)')
     args = parser.parse_args()
     
@@ -447,40 +446,6 @@ def main():
     print(f"[METADATA_PATH] Resolved: {metadata_dir.resolve()}")
     print(f"[METADATA_PATH] Exists: {metadata_dir.exists()}")
     print(f"[METADATA_PATH] Is absolute: {metadata_dir.is_absolute()}")
-    
-    # Debug: Show directory contents
-    print(f"\n[DEBUG] /tmp/scripts/ contents:")
-    try:
-        for f in Path('/tmp/scripts/').iterdir():
-            print(f"  {f.name} ({'dir' if f.is_dir() else 'file'})")
-    except Exception as e:
-        print(f"  Error: {e}")
-    
-    print(f"\n[DEBUG] /tmp/scripts/data/ contents:")
-    try:
-        data_dir = Path('/tmp/scripts/data')
-        if data_dir.exists():
-            for f in data_dir.iterdir():
-                print(f"  {f.name} -> {f.resolve() if f.is_symlink() else 'file'}")
-        else:
-            print("  Directory does not exist")
-    except Exception as e:
-        print(f"  Error: {e}")
-    
-    print(f"\n[DEBUG] /tmp/scripts/data/json/ contents:")
-    try:
-        json_dir = Path('/tmp/scripts/data/json')
-        if json_dir.exists():
-            meta_files = list(json_dir.glob('*.meta.json'))
-            print(f"  Found {len(meta_files)} .meta.json files")
-            if meta_files:
-                print(f"  First 3 files:")
-                for f in meta_files[:3]:
-                    print(f"    {f.name}")
-        else:
-            print("  Directory does not exist")
-    except Exception as e:
-        print(f"  Error: {e}")
     
     rate_limiter = RateLimiter(min_interval=rate_limit)
     
@@ -555,19 +520,12 @@ def main():
         print(f"{'=' * 60}")
         return 0
     
-    # Phase 1: Collect module catalog
+    # Phase 1: Collect module catalog (always, to ensure fresh data)
+    modules_data = collect_module_catalog(api_url, user_agent, rate_limiter)
     catalog_path = Path('all_wfwiki_modules_merged.json')
-    
-    if args.force_collect or not catalog_path.exists():
-        modules_data = collect_module_catalog(api_url, user_agent, rate_limiter)
-        # Save catalog for future use
-        with open(catalog_path, 'w', encoding='utf-8') as f:
-            json.dump(modules_data, f, indent=2)
-        print(f"\nSaved module catalog to {catalog_path}")
-    else:
-        print(f"\nUsing existing module catalog: {catalog_path}")
-        with open(catalog_path, 'r', encoding='utf-8') as f:
-            modules_data = json.load(f)
+    with open(catalog_path, 'w', encoding='utf-8') as f:
+        json.dump(modules_data, f, indent=2)
+    print(f"\nSaved module catalog to {catalog_path}")
     
     # Phase 2: Get timestamps for ALL modules (before filtering)
     # This ensures all_timestamps.json has timestamps for download.py
