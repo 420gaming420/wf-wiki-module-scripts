@@ -28,6 +28,9 @@ def extract_lua_blocks(html: str) -> list[str]:
         clean = re.sub(r"<[^>]+>", "", block)
         clean = clean.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">")
         clean = clean.replace("&quot;", '"').replace("&#39;", "'")
+        # Strip MediaWiki <nowiki> tags (artifacts, not valid Lua)
+        clean = re.sub(r"<nowiki[^>]*>", "", clean, flags=re.IGNORECASE)
+        clean = re.sub(r"</nowiki>", "", clean, flags=re.IGNORECASE)
         blocks.append(clean)
     return blocks
 

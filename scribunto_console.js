@@ -174,6 +174,16 @@ async function main() {
       process.exit(1);
     }
     luaCode = fs.readFileSync(scriptFile, 'utf8');
+    // Scribunto console wraps input in a function, so trailing `return` is invalid
+    // Strip trailing empty lines, then strip trailing `return` lines
+    let lines = luaCode.split('\n');
+    while (lines.length > 0 && lines[lines.length - 1].trim() === '') {
+      lines.pop();
+    }
+    while (lines.length > 0 && lines[lines.length - 1].trim().match(/^return\b/)) {
+      lines.pop();
+    }
+    luaCode = lines.join('\n');
   } else if (!process.stdin.isTTY) {
     let chunks = '';
     for await (const chunk of process.stdin) {
