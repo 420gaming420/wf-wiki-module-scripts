@@ -569,7 +569,13 @@ def main():
         with open(catalog_path, 'r', encoding='utf-8') as f:
             modules_data = json.load(f)
     
-    # Phase 2: Load ignore list
+    # Phase 2: Get timestamps for ALL modules (before filtering)
+    # This ensures all_timestamps.json has timestamps for download.py
+    all_module_titles = [m['title'] for m in modules_data]
+    print(f"\nFetching timestamps for {len(all_module_titles)} modules...")
+    all_timestamps = get_module_timestamps(all_module_titles, api_url, user_agent, rate_limiter)
+    
+    # Phase 3: Load ignore list
     ignore_list = load_ignore_list(ignore_modules_path)
     if ignore_list:
         print(f"\nLoaded {len(ignore_list)} ignored modules")
@@ -587,9 +593,8 @@ def main():
         print(f"\nExcluding {len(test_sand_modules)} test/sandbox modules")
         modules_to_check = [m for m in modules_to_check if m not in test_sand_modules]
     
-    # Phase 3: Get timestamps
-    module_titles = [m['title'] for m in modules_to_check]
-    timestamps = get_module_timestamps(module_titles, api_url, user_agent, rate_limiter)
+    # Use pre-fetched timestamps (already have all of them)
+    timestamps = all_timestamps
     
     # Phase 4: Load existing metadata
     print(f"\nLoading existing metadata from {metadata_dir}...")
@@ -603,6 +608,13 @@ def main():
     print(f"\nSaving {len(stale_list)} stale modules to {stale_modules_path}...")
     with open(stale_modules_path, 'w', encoding='utf-8') as f:
         json.dump(stale_list, f, indent=2)
+
+    # Phase 7: Save timestamp cache for other scripts
+    timestamps_path = Path('all_timestamps.json')
+    timestamps_list = list(timestamps.values())
+    with open(timestamps_path, 'w', encoding='utf-8') as f:
+        json.dump(timestamps_list, f, indent=2)
+    print(f"\nSaved {len(timestamps_list)} timestamps to {timestamps_path}")
     
     # Summary
     elapsed = time.time() - start_time

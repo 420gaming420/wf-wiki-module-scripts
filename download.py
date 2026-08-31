@@ -5,6 +5,9 @@ download.py — Download WARFRAME Wiki module HTML pages for archival.
 Downloads HTML files for all actual modules (excluding test/sandbox),
 storing them in data/html/ with corresponding metadata.
 
+Uses cached data from request.py (all_wfwiki_modules_merged.json and all_timestamps.json).
+No API requests are made by this script.
+
 Usage:
     python download.py [--config CONFIG] [--force] [--page NAME]
 """
@@ -44,7 +47,6 @@ def load_config(config_path: Path) -> dict:
 
     # Wiki settings
     result["base_url"] = config.get("wiki", "base_url", fallback="https://wiki.warframe.com").rstrip("/")
-    result["api_url"] = config.get("wiki", "api_url", fallback="https://wiki.warframe.com/api.php")
     result["staleness_hours"] = _parse_int(config, "wiki", "staleness_hours", 24)
     result["rate_limit"] = _parse_float(config, "wiki", "rate_limit", 1.0)
 
@@ -58,6 +60,7 @@ def load_config(config_path: Path) -> dict:
     result["lua_dir"] = Path(config.get("paths", "lua_dir", fallback="data/lua"))
     result["json_dir"] = Path(config.get("paths", "output_dir", fallback="data/json"))
     result["catalog_file"] = Path(config.get("paths", "catalog_file", fallback="all_wfwiki_modules_merged.json"))
+    result["timestamps_file"] = Path(config.get("paths", "timestamps_file", fallback="all_timestamps.json"))
     result["log_dir"] = Path(config.get("paths", "log_dir", fallback="data/logs"))
 
     return result
@@ -95,85 +98,6 @@ def filter_modules(modules: list) -> list:
         m for m in modules
         if "test" not in m["title"].lower() and "sandbox" not in m["title"].lower()
     ]
-
-
-def get_wiki_timestamp(title: str, api_url: str) -> str | None:
-    """
-    Get the latest wiki timestamp for a module page.
-
-    Args:
-        title: Module title (e.g., "Module:Ability/data")
-        api_url: Wiki API URL
-
-    Returns:
-        ISO timestamp string, or None if not found
-    """
-    encoded_title = urllib.parse.quote(title, safe=":/")
-    url = f"{api_url}?action=query&titles={encoded_title}&prop=revisions&rvprop=timestamp&format=json"
-
-    data = wiki_client.fetch_api_json(url)
-    if not data:
-        return None
-
-    pages = data.get("query", {}).get("pages", {})
-    for page in pages.values():
-        if page.get("title") == title:
-            revisions = page.get("revisions", [])
-            if revisions:
-                return revisions[0].get("timestamp")
-
-    return None
-
-
-def load_module_catalog(catalog_path: Path, api_url: str, force: bool = False) -> list:
-    """
-    Load module catalog from file or re-fetch from API.
-
-    Args:
-        catalog_path: Path to cached catalog JSON
-        api_url: Wiki API URL
-        force: If True, re-fetch from API
-
-    Returns:
-        List of module dicts
-    """
-    if force or not catalog_path.exists():
-        print("Fetching module catalog from wiki API...")
-        url = f"{api_url}?action=query&list=allpages&apnamespace=828&aplimit=420&format=json"
-
-        all_pages = []
-        apcontinue = None
-
-        while True:
-            if apcontinue:
-                url = f"{api_url}?action=query&list=allpages&apnamespace=828&aplimit=420&apcontinue={apcontinue}&format=json"
-
-            data = wiki_client.fetch_api_json(url)
-            if not data:
-                print("Error: Failed to fetch module catalog")
-                sys.exit(1)
-
-            pages = data.get("query", {}).get("allpages", [])
-            all_pages.extend(pages)
-
-            if "continue" in data:
-                apcontinue = data["continue"].get("apcontinue")
-            else:
-                apcontinue = None
-
-            print(f"  Fetched {len(pages)} pages (total: {len(all_pages)})")
-
-            if not apcontinue:
-                break
-
-        with open(catalog_path, "w", encoding="utf-8") as f:
-            json.dump(all_pages, f, indent=2)
-
-        print(f"Saved {len(all_pages)} modules to {catalog_path}")
-        return all_pages
-    else:
-        with open(catalog_path, "r", encoding="utf-8") as f:
-            return json.load(f)
 
 
 def load_meta(html_dir: Path, module_name: str) -> dict | None:
@@ -216,13 +140,13 @@ def save_meta(html_dir: Path, module_name: str, metadata: dict) -> None:
         json.dump(metadata, f, indent=2)
 
 
-def is_stale(meta: dict | None, current_timestamp: str, staleness_hours: int) -> bool:
+def is_stale(meta: dict | None, cached_timestamp: str, staleness_hours: int) -> bool:
     """
     Check if a module HTML file is stale and needs re-downloading.
 
     Args:
         meta: Existing metadata dict or None
-        current_timestamp: Current wiki timestamp
+        cached_timestamp: Cached wiki timestamp from all_timestamps.json
         staleness_hours: Minimum hours between downloads
 
     Returns:
@@ -233,7 +157,7 @@ def is_stale(meta: dict | None, current_timestamp: str, staleness_hours: int) ->
         return True
 
     # Wiki timestamp changed
-    if meta.get("wiki_timestamp") != current_timestamp:
+    if meta.get("wiki_timestamp") != cached_timestamp:
         return True
 
     # Check staleness threshold
@@ -291,14 +215,42 @@ def main():
     print(f"Staleness threshold: {config['staleness_hours']} hours")
     print()
 
-    start_time = time.time()
+    # Verify cache files exist
+    catalog_path = config["catalog_file"]
+    timestamps_path = config["timestamps_file"]
 
-    # Load module catalog
-    modules = load_module_catalog(config["catalog_file"], config["api_url"], args.force)
+    if not catalog_path.exists():
+        print(f"Error: Module catalog not found: {catalog_path}")
+        print("Run request.py first to generate the catalog.")
+        sys.exit(1)
+
+    if not timestamps_path.exists():
+        print(f"Error: Timestamp cache not found: {timestamps_path}")
+        print("Run request.py first to generate the timestamp cache.")
+        sys.exit(1)
+
+    print(f"Using cached module catalog: {catalog_path}")
+    print(f"Using cached timestamps: {timestamps_path}")
+    print()
+
+    # Load module catalog from cache (no API calls)
+    with open(catalog_path, "r", encoding="utf-8") as f:
+        modules = json.load(f)
+
+    # Load timestamps from cache (no API calls)
+    with open(timestamps_path, "r", encoding="utf-8") as f:
+        timestamps_data = json.load(f)
+    timestamps = {t["title"]: t["timestamp"] for t in timestamps_data}
+
+    print(f"Loaded {len(modules)} modules from catalog")
+    print(f"Loaded {len(timestamps)} timestamps from cache")
+    print()
+
+    start_time = time.time()
 
     # Filter out test/sandbox
     modules = filter_modules(modules)
-    print(f"\nTotal modules to process: {len(modules)}")
+    print(f"Total modules to process (after filtering): {len(modules)}")
 
     # If --page specified, only download that one
     if args.page:
@@ -318,16 +270,16 @@ def main():
         module_name = module["title"]
         print(f"[{i}/{len(modules)}] Processing: {module_name}")
 
-        # Get current wiki timestamp
-        current_timestamp = get_wiki_timestamp(module_name, config["api_url"])
-        if not current_timestamp:
-            print(f"  Warning: Could not get timestamp for {module_name}, skipping")
+        # Get timestamp from cache (no API call)
+        cached_timestamp = timestamps.get(module_name)
+        if not cached_timestamp:
+            print(f"  Warning: No timestamp for {module_name}, skipping")
             error_count += 1
             continue
 
         # Check staleness
         meta = load_meta(config["html_dir"], module_name)
-        if not is_stale(meta, current_timestamp, config["staleness_hours"]):
+        if not args.force and not is_stale(meta, cached_timestamp, config["staleness_hours"]):
             print(f"  Skipped (up-to-date)")
             skip_count += 1
             continue
@@ -357,7 +309,7 @@ def main():
         # Save metadata
         metadata = {
             "page": module_name,
-            "wiki_timestamp": current_timestamp,
+            "wiki_timestamp": cached_timestamp,
             "downloaded_at": datetime.now(timezone.utc).isoformat(),
             "file_size": len(html_content),
             "status": "success"
