@@ -274,9 +274,16 @@ async function executeAndExtract(page, luaCode) {
     throw new Error('No JSON output found in console');
   }
 
+  // Scribunto's Module:JSON serializes Lua inf/-inf/NaN as bare tokens
+  // (e.g. "FireRate":inf) which are invalid JSON. Replace them with null.
+  let sanitized = output.text
+    .replace(/":inf(?![a-zA-Z0-9._-])/g, '":null')
+    .replace(/":-inf(?![a-zA-Z0-9._-])/g, '":null')
+    .replace(/":NaN(?![a-zA-Z0-9._-])/g, '":null');
+
   let jsonData;
   try {
-    jsonData = JSON.parse(output.text);
+    jsonData = JSON.parse(sanitized);
   } catch (parseErr) {
     throw new Error(`JSON parse error: ${parseErr.message}\nOutput: ${output.text?.substring(0, 200)}`);
   }

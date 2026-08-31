@@ -133,9 +133,12 @@ node convert_module.js --config config.ini --batch --pages stale_modules.json
 2. Navigates to `https://wiki.warframe.com/w/Module:Sandbox/ScribuntoDebugConsole?action=edit`
 3. Executes Lua code that requires the module, stringifies it with `Module:JSON`, and logs the result via `mw.log()`
 4. Extracts the JSON output from the `.mw-scribunto-print` div
-5. Writes to `data/json/<ModuleName>.json` (colons and slashes in the module name are replaced with hyphens)
+5. Sanitizes invalid JSON tokens (`inf`, `-inf`, `NaN`) produced by Scribunto's `Module:JSON` by replacing them with `null`
+6. Writes to `data/json/<ModuleName>.json` (colons and slashes in the module name are replaced with hyphens)
 
 **Rate limiting:** 1 request per second (configurable via `config.ini`)
+
+> **Note:** Some modules produce `inf` values (e.g. `FireRate:inf` from division by zero, `AmmoMax:inf` for infinite ammo weapons). These are serialized by `Module:JSON` as bare tokens that are invalid JSON. The converter sanitizes them to `null` before parsing.
 
 ---
 
