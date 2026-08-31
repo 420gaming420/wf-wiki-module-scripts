@@ -112,6 +112,45 @@ node convert_module.js --config config.ini --batch --pages stale_modules.json
 
 ---
 
+### `scribunto_daemon.js` — Persistent Scribunto Console
+
+Launches a headless Chromium browser connected to the WARFRAME Wiki Scribunto Debug Console and exposes an HTTP API for executing Lua code.
+
+```bash
+# Start the daemon (runs until killed or 60 minutes idle)
+node scribunto_daemon.js [--config config.ini]
+```
+
+The daemon stays alive and accepts multiple requests. It writes its port to `/tmp/scribunto_daemon.pid` for discovery.
+
+---
+
+### `scribunto_console.js` — CLI Client
+
+Sends Lua code to a running daemon and prints the output.
+
+```bash
+# Execute from stdin pipe
+cat script.lua | node scribunto_console.js
+
+# Execute from file
+node scribunto_console.js --script hello.lua
+
+# Pretty-print JSON output
+cat script.lua | node scribunto_console.js --json
+
+# With custom config
+node scribunto_console.js --config config.ini --script hello.lua
+```
+
+**Features:**
+- Reads Lua from `--script` file or stdin
+- Automatically discovers daemon port via PID file
+- `--json` flag pretty-prints if output is valid JSON
+- Exit code 1 on errors (Lua errors, connection failed, etc.)
+
+---
+
 ### `attribution.py` — Attribution & Comments
 
 Adds source attribution and Lua comments to each converted JSON file.
