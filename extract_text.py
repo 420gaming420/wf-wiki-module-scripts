@@ -124,18 +124,8 @@ def is_stale(html_meta: dict | None, md_meta: dict | None, staleness_hours: int)
     if html_meta.get("wiki_timestamp") != md_meta.get("wiki_timestamp"):
         return True
 
-    # Check staleness threshold
-    extracted_at = md_meta.get("extracted_at")
-    if extracted_at:
-        try:
-            extracted_time = datetime.fromisoformat(extracted_at.replace("Z", "+00:00"))
-            hours_since = (datetime.now(timezone.utc) - extracted_time).total_seconds() / 3600
-            if hours_since < staleness_hours:
-                return False
-        except ValueError:
-            pass
-
-    return True
+    # Timestamps match — file is up to date
+    return False
 
 
 def extract_title(html: str) -> str:
@@ -261,31 +251,36 @@ def main():
     print(f"Found {len(html_files)} HTML files")
     print()
 
-    # Process each HTML file
-    success_count = 0
+    # Pre-filter: only process files that need re-extraction
+    files_to_process = []
     skip_count = 0
-    error_count = 0
 
-    for i, html_path in enumerate(html_files, 1):
-        # Extract module name from filename
-        safe_name = html_path.stem  # e.g., "Module-Ability-data"
+    for html_path in html_files:
+        safe_name = html_path.stem
         if safe_name.startswith("Module-"):
-            suffix = safe_name[7:]  # Remove "Module-"
+            suffix = safe_name[7:]
             module_name = f"Module:{suffix.replace('-', '/')}"
         else:
             module_name = safe_name.replace('-', '/')
 
-        print(f"[{i}/{len(html_files)}] Processing: {module_name}")
-
-        # Load metadata
         html_meta = load_html_meta(config["html_dir"], module_name)
         md_meta = load_html_meta(config["markdown_dir"], module_name)
 
-        # Check staleness
         if not args.force and not is_stale(html_meta, md_meta, config["staleness_hours"]):
-            print(f"  Skipped (up-to-date)")
             skip_count += 1
             continue
+        files_to_process.append((html_path, module_name, html_meta, md_meta))
+
+    print(f"Files to process: {len(files_to_process)} (skipping {skip_count} up-to-date)")
+    print()
+
+    # Process each HTML file
+    success_count = 0
+    error_count = 0
+
+    for i, (html_path, module_name, html_meta, md_meta) in enumerate(files_to_process, 1):
+        safe_name = html_path.stem
+        print(f"[{i}/{len(files_to_process)}] Processing: {module_name}")
 
         # Read HTML
         try:
@@ -355,6 +350,7 @@ def main():
     print("SUMMARY")
     print("=" * 60)
     print(f"Total HTML files: {len(html_files)}")
+    print(f"Files processed:  {len(files_to_process)}")
     print(f"Extracted: {success_count}")
     print(f"Skipped (up-to-date): {skip_count}")
     print(f"Errors: {error_count}")
