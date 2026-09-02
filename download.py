@@ -160,18 +160,8 @@ def is_stale(meta: dict | None, cached_timestamp: str, staleness_hours: int) -> 
     if meta.get("wiki_timestamp") != cached_timestamp:
         return True
 
-    # Check staleness threshold
-    downloaded_at = meta.get("downloaded_at")
-    if downloaded_at:
-        try:
-            downloaded_time = datetime.fromisoformat(downloaded_at.replace("Z", "+00:00"))
-            hours_since = (datetime.now(timezone.utc) - downloaded_time).total_seconds() / 3600
-            if hours_since < staleness_hours:
-                return False
-        except ValueError:
-            pass
-
-    return True
+    # Timestamps match — file is up to date
+    return False
 
 
 def module_to_url(base_url: str, module_name: str) -> str:
@@ -261,27 +251,37 @@ def main():
         print(f"Downloading single module: {args.page}")
     print()
 
+    # Pre-filter: only process modules that need downloading
+    modules_to_download = []
+    skip_count = 0
+
+    for module in modules:
+        module_name = module["title"]
+        cached_timestamp = timestamps.get(module_name)
+        if not cached_timestamp:
+            continue
+        meta = load_meta(config["html_dir"], module_name)
+        if not args.force and not is_stale(meta, cached_timestamp, config["staleness_hours"]):
+            skip_count += 1
+            continue
+        modules_to_download.append(module)
+
+    print(f"Modules to download: {len(modules_to_download)} (skipping {skip_count} up-to-date)")
+    print()
+
     # Download modules
     success_count = 0
-    skip_count = 0
     error_count = 0
 
-    for i, module in enumerate(modules, 1):
+    for i, module in enumerate(modules_to_download, 1):
         module_name = module["title"]
-        print(f"[{i}/{len(modules)}] Processing: {module_name}")
+        print(f"[{i}/{len(modules_to_download)}] Processing: {module_name}")
 
         # Get timestamp from cache (no API call)
         cached_timestamp = timestamps.get(module_name)
         if not cached_timestamp:
             print(f"  Warning: No timestamp for {module_name}, skipping")
             error_count += 1
-            continue
-
-        # Check staleness
-        meta = load_meta(config["html_dir"], module_name)
-        if not args.force and not is_stale(meta, cached_timestamp, config["staleness_hours"]):
-            print(f"  Skipped (up-to-date)")
-            skip_count += 1
             continue
 
         # Download HTML
