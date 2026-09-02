@@ -79,6 +79,23 @@ def get_lua_dir(config: configparser.ConfigParser) -> Path:
     return Path(config.get("paths", "lua_dir", fallback="data/lua"))
 
 
+def _module_name_from_path(json_path: Path) -> str:
+    """
+    Derive module name from a JSON filename.
+
+    Args:
+        json_path: Path like data/json/Module-Weapons-data-melee.json
+
+    Returns:
+        Module name like Module:Weapons/data/melee
+    """
+    safe_name = json_path.stem
+    if safe_name.startswith("Module-"):
+        suffix = safe_name[7:]
+        return f"Module:{suffix.replace('-', '/')}"
+    return safe_name.replace('-', '/')
+
+
 def load_meta_for_file(json_path: Path) -> tuple[dict | None, str]:
     """
     Load metadata for a JSON file using its corresponding .meta.json.
@@ -208,13 +225,6 @@ def process_file(
         return False, f"No 'page' field in metadata for {json_path.name}"
 
     converted_at = meta.get("converted_at", datetime.now(timezone.utc).isoformat())
-
-    # Check staleness (skip if --force)
-    if not force and stale_modules is not None:
-        if module_name not in stale_modules:
-            if verbose:
-                return True, f"Skipped (not stale, --force not set): {json_path.name}"
-            return True, f"Skipped (not stale): {json_path.name}"
 
     # Load JSON
     try:
@@ -360,24 +370,35 @@ def main() -> int:
         print(f"No stale_modules.json found (processing all files)")
 
     # Collect all .json files (skip .meta.json)
-    json_files = sorted(output_dir.glob("*.json"))
-    json_files = [f for f in json_files if not f.name.endswith(".meta.json")]
+    all_json_files = sorted(output_dir.glob("*.json"))
+    all_json_files = [f for f in all_json_files if not f.name.endswith(".meta.json")]
 
-    if not json_files:
+    if not all_json_files:
         print("No JSON files found in output directory.")
         return 0
 
-    print(f"Found {len(json_files)} JSON file(s) in {output_dir}")
+    # Pre-filter: only process stale modules unless --force
+    if stale_modules is not None and not args.force:
+        files_to_process = [f for f in all_json_files if _module_name_from_path(f) in stale_modules]
+        skip_count = len(all_json_files) - len(files_to_process)
+    else:
+        files_to_process = all_json_files
+        skip_count = 0
+
+    print(f"JSON files: {len(all_json_files)}")
+    if stale_modules is not None and not args.force:
+        print(f"Processing: {len(files_to_process)} stale modules (skipping {skip_count} up-to-date)")
+    else:
+        print(f"Processing: {len(files_to_process)} files")
     if args.dry_run:
         print("(dry run mode — no changes will be written)\n")
     print()
 
     success_count = 0
-    skip_count = 0
     error_count = 0
     errors = []
 
-    for json_path in json_files:
+    for json_path in files_to_process:
         ok, msg = process_file(
             json_path,
             base_url,
@@ -399,7 +420,8 @@ def main() -> int:
     print("=" * 60)
     print("SUMMARY")
     print("=" * 60)
-    print(f"Total files scanned: {len(json_files)}")
+    print(f"Total files scanned: {len(all_json_files)}")
+    print(f"Files processed:     {len(files_to_process)}")
     print(f"Processed successfully: {success_count}")
     print(f"Errors: {error_count}")
     if errors:
