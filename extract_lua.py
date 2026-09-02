@@ -196,8 +196,16 @@ def main():
         blocks, comments = lua_extractor.extract_all(html_content)
 
         if not blocks:
-            print(f"  Warning: No Lua code found in {html_path}")
-            error_count += 1
+            metadata = {
+                "page": module_name,
+                "wiki_timestamp": html_meta.get("wiki_timestamp") if html_meta else None,
+                "extracted_at": datetime.now(timezone.utc).isoformat(),
+                "lua_block_count": 0,
+                "status": "fail"
+            }
+            save_lua_meta(config["lua_dir"], module_name, metadata)
+            print(f"  Skipped (no Lua code)")
+            skip_count += 1
             continue
 
         # Save each block as a separate file: <safe_name>_N.lua
