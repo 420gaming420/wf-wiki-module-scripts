@@ -1985,6 +1985,36 @@
       "reason": "Failed to convert Module:Yesno/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Yesno/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C]:",
       "ignored_at": "2026-08-31T21:34:19.269Z",
       "attempt_count": 1
+    },
+    {
+      "module": "Module:Honorias",
+      "reason": "Failed to convert Module:Honorias: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-09-03T02:18:08.538Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Honorias/data/doc",
+      "reason": "Failed to convert Module:Honorias/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Honorias/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:",
+      "ignored_at": "2026-09-03T02:18:12.808Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Honorias/data/validate",
+      "reason": "Failed to convert Module:Honorias/data/validate: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-09-03T02:18:14.439Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Honorias/data/validate/doc",
+      "reason": "Failed to convert Module:Honorias/data/validate/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Honorias/data/validate/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"conso",
+      "ignored_at": "2026-09-03T02:18:16.072Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Honorias/doc",
+      "reason": "Failed to convert Module:Honorias/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Honorias/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[",
+      "ignored_at": "2026-09-03T02:18:17.700Z",
+      "attempt_count": 1
     }
   ]
 }
