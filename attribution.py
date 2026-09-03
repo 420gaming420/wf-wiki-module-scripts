@@ -253,7 +253,7 @@ def process_file(
         if lua_files:
             try:
                 combined = "\n\n".join(
-                    (lua_dir / f).read_text(encoding="utf-8") for f in lua_files
+                    f.read_text(encoding="utf-8") for f in lua_files
                 )
                 comment_text = lua_extractor.extract_comments(combined)
             except OSError as e:
