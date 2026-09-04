@@ -303,8 +303,16 @@ def main():
             continue
 
         if not md_content:
-            print(f"  Warning: No content extracted from {html_path}")
-            error_count += 1
+            metadata = {
+                "page": module_name,
+                "wiki_timestamp": html_meta.get("wiki_timestamp") if html_meta else None,
+                "extracted_at": datetime.now(timezone.utc).isoformat(),
+                "file_size": 0,
+                "status": "fail"
+            }
+            save_md_meta(config["markdown_dir"], module_name, metadata)
+            print(f"  Skipped (no content)")
+            skip_count += 1
             continue
 
         # Save markdown
@@ -352,7 +360,7 @@ def main():
     print(f"Total HTML files: {len(html_files)}")
     print(f"Files processed:  {len(files_to_process)}")
     print(f"Extracted: {success_count}")
-    print(f"Skipped (up-to-date): {skip_count}")
+    print(f"Skipped: {skip_count}")
     print(f"Errors: {error_count}")
     print(f"Time elapsed: {elapsed:.2f} seconds")
     print("=" * 60)
