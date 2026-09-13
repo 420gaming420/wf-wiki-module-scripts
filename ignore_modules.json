@@ -2015,6 +2015,12 @@
       "reason": "Failed to convert Module:Honorias/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Honorias/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[",
       "ignored_at": "2026-09-03T02:18:17.700Z",
       "attempt_count": 1
+    },
+    {
+      "module": "Module:DevstreamParticipantsList/doc",
+      "reason": "Failed to convert Module:DevstreamParticipantsList/doc: Lua error: Lua error in package.lua at line 80: module 'Module:DevstreamParticipantsList/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"co",
+      "ignored_at": "2026-09-13T02:13:51.079Z",
+      "attempt_count": 1
     }
   ]
 }
