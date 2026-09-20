@@ -2021,6 +2021,36 @@
       "reason": "Failed to convert Module:DevstreamParticipantsList/doc: Lua error: Lua error in package.lua at line 80: module 'Module:DevstreamParticipantsList/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"co",
       "ignored_at": "2026-09-13T02:13:51.079Z",
       "attempt_count": 1
+    },
+    {
+      "module": "Module:Synthesis",
+      "reason": "Failed to convert Module:Synthesis: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-09-20T02:14:07.962Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Synthesis/data/doc",
+      "reason": "Failed to convert Module:Synthesis/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Synthesis/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input",
+      "ignored_at": "2026-09-20T02:14:12.225Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Synthesis/data/validate",
+      "reason": "Failed to convert Module:Synthesis/data/validate: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-09-20T02:14:13.852Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Synthesis/data/validate/doc",
+      "reason": "Failed to convert Module:Synthesis/data/validate/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Synthesis/data/validate/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"cons",
+      "ignored_at": "2026-09-20T02:14:15.483Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Synthesis/doc",
+      "reason": "Failed to convert Module:Synthesis/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Synthesis/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
+      "ignored_at": "2026-09-20T02:14:17.111Z",
+      "attempt_count": 1
     }
   ]
 }
