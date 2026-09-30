@@ -476,7 +476,7 @@ main() {
     # Return appropriate exit code
     if [ $convert_exit_code -eq 2 ]; then
         # No stale modules - not an error
-        return 2
+        return 0
     elif [ $convert_exit_code -eq 4 ]; then
         # GitHub Action disabled
         return 4
