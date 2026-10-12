@@ -2051,6 +2051,18 @@
       "reason": "Failed to convert Module:Synthesis/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Synthesis/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?",
       "ignored_at": "2026-09-20T02:14:17.111Z",
       "attempt_count": 1
+    },
+    {
+      "module": "Module:Trading",
+      "reason": "Failed to convert Module:Trading: Lua error: Lua error in Module:JSON at line 147: Unjsonifiable type: function..Backtrace:[C]: in function \"error\"Module:JSON:147: in function \"stringify\"Module:JSON:134: in function \"stringify\"console input:9: ?",
+      "ignored_at": "2026-10-12T08:50:31.201Z",
+      "attempt_count": 1
+    },
+    {
+      "module": "Module:Trading/doc",
+      "reason": "Failed to convert Module:Trading/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Trading/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8: ?[C",
+      "ignored_at": "2026-10-12T08:50:32.832Z",
+      "attempt_count": 1
     }
   ]
 }
