@@ -412,5 +412,5 @@ All trademarks are the property of their respective owners.
 
 See [https://wiki.warframe.com/w/WARFRAME_Wiki:Licensing](https://wiki.warframe.com/w/WARFRAME_Wiki:Licensing) for details.
 
-See [ATTRIBUTION.md](https://github.com/420gaming420/wf-wiki-module-data/blob/main/ATTRIBUTION.md) in the [data repository](https://github.com/420gaming420/wf-wiki-module-data) for attribution requirements on the data.
+See [ATTRIBUTION.md](https://github.com/420gaming420/wf-wiki-module-data/blob/dev/ATTRIBUTION.md) in the [data repository](https://github.com/420gaming420/wf-wiki-module-data) for attribution requirements on the data.
 
