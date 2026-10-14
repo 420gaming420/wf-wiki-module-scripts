@@ -383,6 +383,12 @@ Shared code is extracted to `utils/` to avoid duplication:
 - **puppeteer** npm package
 - **bash** (for `workflow.sh`)
 
+## AI Disclosure
+
+This project was developed with [opencode](https://github.com/anomalyco/opencode/releases) using a locally hosted [llama.cpp server](https://github.com/ggml-org/llama.cpp) as the provider with 256k context size running Qwen3.6 35B [Myric/KAT-Coder-V2.5-Dev-MTP-APEX-GGUF](https://huggingface.co/Myric/KAT-Coder-V2.5-Dev-MTP-APEX-GGUF) i-quality version.
+
+This repo may contain inaccuracies, hallucinated logic, or suboptimal patterns introduced by the model. Scripts were manually reviewed and tested by a human operator, and verified to work in practice. Contributions and pull requests fixing bugs or making improvements are welcome.
+
 ## License
 
 | Component | License |
