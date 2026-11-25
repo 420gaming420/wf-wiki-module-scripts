@@ -2069,6 +2069,12 @@
       "reason": "Failed to convert Module:Glyphs/data/doc: Lua error: Lua error in package.lua at line 80: module 'Module:Glyphs/data/doc' not found.Backtrace:[C]: in function \"error\"package.lua:80: in function \"load\"package.lua:99: in function \"require\"console input:8:",
       "ignored_at": "2026-11-18T09:54:22.570Z",
       "attempt_count": 1
+    },
+    {
+      "module": "Module:Cosmetics/data/weaponskin/doc",
+      "reason": "Failed to convert Module:Cosmetics/data/weaponskin/doc: Waiting for selector `.mw-scribunto-print` failed",
+      "ignored_at": "2026-11-25T10:59:47.451Z",
+      "attempt_count": 1
     }
   ]
 }
